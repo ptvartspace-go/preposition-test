@@ -142,6 +142,13 @@
     line-height: 1.65;
     opacity: 0.85;
   }
+  .sentence-ja-hint {
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    padding: 2px 0 4px 30px;
+    line-height: 1.5;
+    font-style: italic;
+  }
   .sentence-item-wrap {
     border-bottom: 1px solid var(--paper-mid);
     padding: 0.2rem 0 0.6rem;
@@ -382,43 +389,43 @@ function escAttr(s) { return String(s).replace(/"/g,'&quot;'); }
 
 var fiPlaceWords = ['in','on','at','under','over','next to','behind','between','above','below'];
 var fiPlaceSentences = [
-  { text: 'The milk is ___ the fridge.',                   answer: 'in',      explain: '"In" is used for enclosed spaces. The fridge is a container, so things are inside it.',                                                                    explainJa: '「in」は囲まれた空間に使います。冷蔵庫は容器なので、物はその中（内側）にあります。' },
-  { text: 'Her glasses are ___ the table.',                answer: 'on',      explain: '"On" describes contact with a surface. The glasses are resting on top of the table.',                                                                       explainJa: '「on」は表面に接触していることを表します。メガネはテーブルの上に置かれています。' },
-  { text: 'She is standing ___ the entrance.',             answer: 'at',      explain: '"At" pinpoints a specific location or point — here, the exact spot of the entrance.',                                                                       explainJa: '「at」は特定の場所や地点を示します。ここでは入口というまさにその場所を指しています。' },
-  { text: 'The dog is sleeping ___ the bench.',            answer: 'under',   explain: '"Under" means directly beneath something. The dog is below the bench, sheltered by it.',                                                                    explainJa: '「under」は何かのすぐ真下にあることを意味します。犬はベンチの下で休んでいます。' },
-  { text: 'The bridge arches ___ the river.',              answer: 'over',    explain: '"Over" means directly above, spanning from one side to the other — describing the bridge\'s arch.',                                                         explainJa: '「over」は真上にあり、一方から他方へ広がることを意味します。橋がアーチを描いて川の上に架かっている様子を表しています。' },
-  { text: 'He sat ___ his sister at dinner.',              answer: 'next to', explain: '"Next to" means immediately beside someone. He and his sister were in adjacent seats.',                                                                     explainJa: '「next to」はすぐ隣にいることを意味します。彼と妹／姉は隣り合った席に座っていました。' },
-  { text: 'The garden is ___ the house.',                  answer: 'behind',  explain: '"Behind" means at the back of something. The garden is on the rear side of the house.',                                                                     explainJa: '「behind」は何かの後ろ側にあることを意味します。庭は家の裏側にあります。' },
-  { text: 'The post office is ___ the bank and the café.', answer: 'between', explain: '"Between" places something in the middle of two reference points — the bank on one side, the café on the other.',                                           explainJa: '「between」は二つの基準点の間にあることを表します。銀行とカフェのそれぞれの間に郵便局があります。' },
-  { text: 'The smoke alarm is ___ the door.',              answer: 'above',   explain: '"Above" means higher than something without touching it. The alarm is mounted on the wall higher up than the door frame.',                                   explainJa: '「above」は何かより高い位置にあり、接触はしていないことを意味します。警報器はドア枠より高い壁に取り付けられています。' },
-  { text: 'The village lies ___ the hilltop.',             answer: 'below',   explain: '"Below" means at a lower level. The village is further down the slope than the top of the hill.',                                                           explainJa: '「below」はより低い位置にあることを意味します。村は丘の頂上よりも斜面の下の方にあります。' },
+  { text: 'The milk is ___ the fridge.',                   answer: 'in',      textJa: '牛乳は冷蔵庫の中にあります。',                               explain: '"In" is used for enclosed spaces. The fridge is a container, so things are inside it.',                                                                    explainJa: '「in」は囲まれた空間に使います。冷蔵庫は容器なので、物はその中（内側）にあります。' },
+  { text: 'Her glasses are ___ the table.',                answer: 'on',      textJa: '彼女のメガネはテーブルの上にあります。',                       explain: '"On" describes contact with a surface. The glasses are resting on top of the table.',                                                                       explainJa: '「on」は表面に接触していることを表します。メガネはテーブルの上に置かれています。' },
+  { text: 'She is standing ___ the entrance.',             answer: 'at',      textJa: '彼女は入口のところに立っています。',                           explain: '"At" pinpoints a specific location or point — here, the exact spot of the entrance.',                                                                       explainJa: '「at」は特定の場所や地点を示します。ここでは入口というまさにその場所を指しています。' },
+  { text: 'The dog is sleeping ___ the bench.',            answer: 'under',   textJa: '犬はベンチの下で眠っています。',                               explain: '"Under" means directly beneath something. The dog is below the bench, sheltered by it.',                                                                    explainJa: '「under」は何かのすぐ真下にあることを意味します。犬はベンチの下で休んでいます。' },
+  { text: 'The bridge arches ___ the river.',              answer: 'over',    textJa: '橋は川の上にアーチを描いています。',                           explain: '"Over" means directly above, spanning from one side to the other — describing the bridge\'s arch.',                                                         explainJa: '「over」は真上にあり、一方から他方へ広がることを意味します。橋がアーチを描いて川の上に架かっている様子を表しています。' },
+  { text: 'He sat ___ his sister at dinner.',              answer: 'next to', textJa: '彼は夕食のとき、姉（妹）の隣に座りました。',                   explain: '"Next to" means immediately beside someone. He and his sister were in adjacent seats.',                                                                     explainJa: '「next to」はすぐ隣にいることを意味します。彼と妹／姉は隣り合った席に座っていました。' },
+  { text: 'The garden is ___ the house.',                  answer: 'behind',  textJa: '庭は家の裏にあります。',                                       explain: '"Behind" means at the back of something. The garden is on the rear side of the house.',                                                                     explainJa: '「behind」は何かの後ろ側にあることを意味します。庭は家の裏側にあります。' },
+  { text: 'The post office is ___ the bank and the café.', answer: 'between', textJa: '郵便局は銀行とカフェの間にあります。',                         explain: '"Between" places something in the middle of two reference points — the bank on one side, the café on the other.',                                           explainJa: '「between」は二つの基準点の間にあることを表します。銀行とカフェのそれぞれの間に郵便局があります。' },
+  { text: 'The smoke alarm is ___ the door.',              answer: 'above',   textJa: '煙感知器はドアの上に取り付けられています。',                   explain: '"Above" means higher than something without touching it. The alarm is mounted on the wall higher up than the door frame.',                                   explainJa: '「above」は何かより高い位置にあり、接触はしていないことを意味します。警報器はドア枠より高い壁に取り付けられています。' },
+  { text: 'The village lies ___ the hilltop.',             answer: 'below',   textJa: '村は丘の頂上より下にあります。',                               explain: '"Below" means at a lower level. The village is further down the slope than the top of the hill.',                                                           explainJa: '「below」はより低い位置にあることを意味します。村は丘の頂上よりも斜面の下の方にあります。' },
 ];
 
 var fiTimeWords = ['at','on','in','since','for','before','after','during','by','until'];
 var fiTimeSentences = [
-  { text: 'The library closes ___ 9 p.m.',                answer: 'at',     explain: '"At" is used with precise clock times. 9 p.m. is an exact point on the clock.',                                                                             explainJa: '「at」は正確な時刻に使います。午後9時は時計上の正確な時点です。' },
-  { text: 'We have football practice ___ Saturday.',      answer: 'on',     explain: '"On" is used with days of the week and specific dates.',                                                                                                       explainJa: '「on」は曜日や特定の日付に使います。' },
-  { text: 'He was promoted ___ the spring.',              answer: 'in',     explain: '"In" is used with seasons, months, and years — longer, less precise periods of time.',                                                                        explainJa: '「in」は季節・月・年など、より長く大まかな期間に使います。' },
-  { text: 'She has worked there ___ she graduated.',      answer: 'since',  explain: '"Since" marks the starting point of a continuing situation. Graduating was the moment it began.',                                                             explainJa: '「since」は継続している状況の起点を示します。卒業した瞬間がその始まりです。' },
-  { text: 'The power was out ___ six hours.',             answer: 'for',    explain: '"For" measures a duration — how long something lasted. Six hours is a period of time, not a point.',                                                          explainJa: '「for」は期間を表します。6時間は時点ではなく、続いた時間の長さです。' },
-  { text: 'Please read the instructions ___ you start.',  answer: 'before', explain: '"Before" means earlier than another event. Reading comes first, starting the task comes second.',                                                             explainJa: '「before」は別の出来事より前であることを意味します。読むことが先で、作業を始めることが後です。' },
-  { text: 'We had coffee ___ the meeting.',               answer: 'after',  explain: '"After" means later than another event. The coffee happened once the meeting had ended.',                                                                     explainJa: '「after」は別の出来事より後であることを意味します。会議が終わってからコーヒーを飲みました。' },
-  { text: 'Please keep quiet ___ the ceremony.',          answer: 'during', explain: '"During" means throughout a period or event. Silence is required for the whole length of the ceremony.',                                                      explainJa: '「during」はある期間やイベントの全体を通じてという意味です。式典の間ずっと静粛にする必要があります。' },
-  { text: 'The report must be submitted ___ Friday.',     answer: 'by',     explain: '"By" sets a deadline — the report must arrive no later than Friday. It could be earlier, but not after.',                                                     explainJa: '「by」は締め切りを設定します。レポートは金曜日までに提出しなければなりません。それより早くても構いませんが、遅れてはいけません。' },
-  { text: 'Stay in your seat ___ the bell rings.',        answer: 'until',  explain: '"Until" marks the endpoint of a continuing action. Staying seated is ongoing right up to the moment the bell rings.',                                        explainJa: '「until」は継続する動作の終点を示します。ベルが鳴る瞬間まで、ずっと座り続けることを表しています。' },
+  { text: 'The library closes ___ 9 p.m.',                answer: 'at',     textJa: '図書館は午後9時に閉まります。',                                 explain: '"At" is used with precise clock times. 9 p.m. is an exact point on the clock.',                                                                             explainJa: '「at」は正確な時刻に使います。午後9時は時計上の正確な時点です。' },
+  { text: 'We have football practice ___ Saturday.',      answer: 'on',     textJa: '私たちは土曜日にサッカーの練習があります。',                     explain: '"On" is used with days of the week and specific dates.',                                                                                                       explainJa: '「on」は曜日や特定の日付に使います。' },
+  { text: 'He was promoted ___ the spring.',              answer: 'in',     textJa: '彼は春に昇進しました。',                                         explain: '"In" is used with seasons, months, and years — longer, less precise periods of time.',                                                                        explainJa: '「in」は季節・月・年など、より長く大まかな期間に使います。' },
+  { text: 'She has worked there ___ she graduated.',      answer: 'since',  textJa: '彼女は卒業してからずっとそこで働いています。',                   explain: '"Since" marks the starting point of a continuing situation. Graduating was the moment it began.',                                                             explainJa: '「since」は継続している状況の起点を示します。卒業した瞬間がその始まりです。' },
+  { text: 'The power was out ___ six hours.',             answer: 'for',    textJa: '停電が6時間続きました。',                                         explain: '"For" measures a duration — how long something lasted. Six hours is a period of time, not a point.',                                                          explainJa: '「for」は期間を表します。6時間は時点ではなく、続いた時間の長さです。' },
+  { text: 'Please read the instructions ___ you start.',  answer: 'before', textJa: '始める前に説明書をお読みください。',                             explain: '"Before" means earlier than another event. Reading comes first, starting the task comes second.',                                                             explainJa: '「before」は別の出来事より前であることを意味します。読むことが先で、作業を始めることが後です。' },
+  { text: 'We had coffee ___ the meeting.',               answer: 'after',  textJa: '私たちは会議の後でコーヒーを飲みました。',                       explain: '"After" means later than another event. The coffee happened once the meeting had ended.',                                                                     explainJa: '「after」は別の出来事より後であることを意味します。会議が終わってからコーヒーを飲みました。' },
+  { text: 'Please keep quiet ___ the ceremony.',          answer: 'during', textJa: '式典の間は静かにしてください。',                                 explain: '"During" means throughout a period or event. Silence is required for the whole length of the ceremony.',                                                      explainJa: '「during」はある期間やイベントの全体を通じてという意味です。式典の間ずっと静粛にする必要があります。' },
+  { text: 'The report must be submitted ___ Friday.',     answer: 'by',     textJa: 'レポートは金曜日までに提出しなければなりません。',               explain: '"By" sets a deadline — the report must arrive no later than Friday. It could be earlier, but not after.',                                                     explainJa: '「by」は締め切りを設定します。レポートは金曜日までに提出しなければなりません。それより早くても構いませんが、遅れてはいけません。' },
+  { text: 'Stay in your seat ___ the bell rings.',        answer: 'until',  textJa: 'ベルが鳴るまで席を立たないでください。',                         explain: '"Until" marks the endpoint of a continuing action. Staying seated is ongoing right up to the moment the bell rings.',                                        explainJa: '「until」は継続する動作の終点を示します。ベルが鳴る瞬間まで、ずっと座り続けることを表しています。' },
 ];
 
 var fiDirWords = ['to','into','onto','out of','off','from','toward','over','along'];
 var fiDirSentences = [
-  { text: 'She drove ___ the airport.',             answer: 'to',     explain: '"To" shows the destination of a journey. The airport is where she was heading.',                                                                                   explainJa: '「to」は移動の目的地を示します。空港が彼女の向かっていた場所です。' },
-  { text: 'The children ran ___ the building.',     answer: 'into',   explain: '"Into" shows movement from outside to inside an enclosed space. The children entered the building.',                                                                explainJa: '「into」は囲まれた空間の外から中への移動を示します。子供たちは建物の中に入りました。' },
-  { text: 'He stepped ___ the stage.',              answer: 'onto',   explain: '"Onto" shows movement to a surface or platform. The stage is a raised surface he moved up onto.',                                                                  explainJa: '「onto」は表面や台の上への移動を示します。ステージは彼が上に乗った高い台です。' },
-  { text: 'She climbed ___ the car and stretched.', answer: 'out of', explain: '"Out of" shows movement from inside to outside an enclosed space. She exited the car.',                                                                            explainJa: '「out of」は囲まれた空間の内側から外への移動を示します。彼女は車から外に出ました。' },
-  { text: 'The skier launched ___ the ramp.',       answer: 'off',    explain: '"Off" shows movement away from a surface. The skier left the ramp\'s surface and became airborne.',                                                                explainJa: '「off」は表面から離れる動きを示します。スキーヤーはランプの面を離れ、空中に飛び出しました。' },
-  { text: 'This train departs ___ Osaka.',          answer: 'from',   explain: '"From" shows the origin or starting point of a journey. Osaka is where the train sets off.',                                                                       explainJa: '「from」は移動の出発点・起点を示します。大阪がこの列車の出発地です。' },
-  { text: 'The crowd moved ___ the exit.',          answer: 'toward', explain: '"Toward" shows the direction of movement without necessarily reaching the destination. The crowd was heading in that direction.',                                   explainJa: '「toward」は必ずしも目的地に到達しなくても、その方向への移動を示します。群衆はその方向に向かっていました。' },
-  { text: 'The helicopter flew ___ the village.',   answer: 'over',   explain: '"Over" shows movement across and above an area. The helicopter passed above the village in flight.',                                                               explainJa: '「over」はある地域の上を横切る移動を示します。ヘリコプターは飛行中に村の上を通過しました。' },
-  { text: 'We cycled ___ the canal path.',          answer: 'along',  explain: '"Along" shows movement following the length of something — a path, road, or river.',                                                                              explainJa: '「along」は道・道路・川などの長さに沿った移動を示します。' },
+  { text: 'She drove ___ the airport.',             answer: 'to',     textJa: '彼女は空港まで車で行きました。',                                     explain: '"To" shows the destination of a journey. The airport is where she was heading.',                                                                                   explainJa: '「to」は移動の目的地を示します。空港が彼女の向かっていた場所です。' },
+  { text: 'The children ran ___ the building.',     answer: 'into',   textJa: '子供たちは建物の中に走り込みました。',                               explain: '"Into" shows movement from outside to inside an enclosed space. The children entered the building.',                                                                explainJa: '「into」は囲まれた空間の外から中への移動を示します。子供たちは建物の中に入りました。' },
+  { text: 'He stepped ___ the stage.',              answer: 'onto',   textJa: '彼はステージに上がりました。',                                       explain: '"Onto" shows movement to a surface or platform. The stage is a raised surface he moved up onto.',                                                                  explainJa: '「onto」は表面や台の上への移動を示します。ステージは彼が上に乗った高い台です。' },
+  { text: 'She climbed ___ the car and stretched.', answer: 'out of', textJa: '彼女は車から降りてストレッチをしました。',                           explain: '"Out of" shows movement from inside to outside an enclosed space. She exited the car.',                                                                            explainJa: '「out of」は囲まれた空間の内側から外への移動を示します。彼女は車から外に出ました。' },
+  { text: 'The skier launched ___ the ramp.',       answer: 'off',    textJa: 'スキーヤーはランプから飛び出しました。',                             explain: '"Off" shows movement away from a surface. The skier left the ramp\'s surface and became airborne.',                                                                explainJa: '「off」は表面から離れる動きを示します。スキーヤーはランプの面を離れ、空中に飛び出しました。' },
+  { text: 'This train departs ___ Osaka.',          answer: 'from',   textJa: 'この電車は大阪を出発します。',                                       explain: '"From" shows the origin or starting point of a journey. Osaka is where the train sets off.',                                                                       explainJa: '「from」は移動の出発点・起点を示します。大阪がこの列車の出発地です。' },
+  { text: 'The crowd moved ___ the exit.',          answer: 'toward', textJa: '群衆は出口の方へ移動しました。',                                     explain: '"Toward" shows the direction of movement without necessarily reaching the destination. The crowd was heading in that direction.',                                   explainJa: '「toward」は必ずしも目的地に到達しなくても、その方向への移動を示します。群衆はその方向に向かっていました。' },
+  { text: 'The helicopter flew ___ the village.',   answer: 'over',   textJa: 'ヘリコプターは村の上空を飛びました。',                               explain: '"Over" shows movement across and above an area. The helicopter passed above the village in flight.',                                                               explainJa: '「over」はある地域の上を横切る移動を示します。ヘリコプターは飛行中に村の上を通過しました。' },
+  { text: 'We cycled ___ the canal path.',          answer: 'along',  textJa: '私たちは運河沿いの道を自転車で走りました。',                         explain: '"Along" shows movement following the length of something — a path, road, or river.',                                                                              explainJa: '「along」は道・道路・川などの長さに沿った移動を示します。' },
 ];
 
 var fiSelected = null;
@@ -483,7 +490,12 @@ function buildSentenceList(cid, sentences, group) {
     expl.className = 'sentence-explain';
     expl.id = 'explain-' + group + '-' + i;
 
+    var jaHint = document.createElement('div');
+    jaHint.className = 'sentence-ja-hint';
+    jaHint.textContent = s.textJa;
+
     wrap.appendChild(item);
+    wrap.appendChild(jaHint);
     wrap.appendChild(expl);
     c.appendChild(wrap);
   });
@@ -697,42 +709,49 @@ var errorAll = [
   {
     before: 'She has studied French', wrong: 'since', after: 'five years.',
     correct: 'for',
+    correctSentenceJa: '彼女はフランス語を5年間勉強しています。',
     explanation: '"Since" needs a specific point in time (e.g. since 2019). "For" is used with a period of time (for five years).',
     explanationJa: '「since」は特定の時点（例：since 2019）が必要です。「for」は期間（for five years）に使います。'
   },
   {
     before: 'I wake up', wrong: 'in', after: '6 a.m. every day.',
     correct: 'at',
+    correctSentenceJa: '私は毎日午前6時に起きます。',
     explanation: '"At" is used with clock times. "In" is used with months, years, and parts of the day (in the morning).',
     explanationJa: '「at」は時刻に使います。「in」は月・年・時間帯（in the morning）に使います。'
   },
   {
     before: 'The festival takes place', wrong: 'at', after: 'August every year.',
     correct: 'in',
+    correctSentenceJa: 'そのお祭りは毎年8月に開催されます。',
     explanation: '"In" is used with months and years. "At" is used with specific clock times.',
     explanationJa: '「in」は月・年に使います。「at」は具体的な時刻に使います。'
   },
   {
     before: 'Please finish the task', wrong: 'until', after: 'noon.',
     correct: 'by',
+    correctSentenceJa: '正午までにその作業を終わらせてください。',
     explanation: '"By" sets a deadline — no later than noon. "Until" describes continuing up to a point (wait until noon).',
     explanationJa: '「by」は締め切り（正午まで）を表します。「until」は正午まで継続することを表します（wait until noon）。'
   },
   {
     before: 'We must wait', wrong: 'by', after: 'the results are ready.',
     correct: 'until',
+    correctSentenceJa: '結果が出るまで待たなければなりません。',
     explanation: '"Until" shows the endpoint of a continuing action. "By" gives a deadline for a completed action.',
     explanationJa: '「until」は継続する動作の終点を表します。「by」は完了した動作の締め切りを表します。'
   },
   {
     before: 'She arrived', wrong: 'after', after: 'the meeting started.',
     correct: 'before',
+    correctSentenceJa: '彼女は会議が始まる前に到着しました。',
     explanation: 'The sentence says she arrived — implying she was there early. "Before" is the correct word here.',
     explanationJa: '文は彼女が到着したことを述べており、早めにそこにいたことを意味します。「before」がここでは正しい語です。'
   },
   {
     before: 'No photographs are allowed', wrong: 'after', after: 'the performance.',
     correct: 'during',
+    correctSentenceJa: '公演中は写真撮影禁止です。',
     explanation: '"During" means throughout a period. "After" would mean photographs are banned once the show is over, which changes the meaning.',
     explanationJa: '「during」はある期間全体を通じてという意味です。「after」では公演が終わった後に写真撮影が禁止されることになり、意味が変わってしまいます。'
   },
@@ -740,30 +759,35 @@ var errorAll = [
   {
     before: 'The keys are hanging', wrong: 'below', after: 'the hook on the wall.',
     correct: 'on',
+    correctSentenceJa: '鍵は壁のフックに掛かっています。',
     explanation: 'Keys hang on a hook, not below it. "Below" would mean they are lower than the hook, not attached to it.',
     explanationJa: '鍵はフックに掛かっています（on a hook）。「below」だとフックより下の位置になり、掛かっていないことになります。'
   },
   {
     before: 'She is waiting', wrong: 'in', after: 'the bus stop.',
     correct: 'at',
+    correctSentenceJa: '彼女はバス停で待っています。',
     explanation: '"At" is used with named locations and stops. "In" would suggest she is inside the bus stop structure.',
     explanationJa: '「at」は特定の場所や停留所に使います。「in」だと彼女がバス停の構造物の中にいることになります。'
   },
   {
     before: 'The flight information is displayed', wrong: 'under', after: 'the screen.',
     correct: 'on',
+    correctSentenceJa: 'フライト情報はスクリーンに表示されています。',
     explanation: 'Information is displayed on a screen, not under it. "On" is used for surfaces.',
     explanationJa: '情報はスクリーンに（on）表示されます。その下（under）に表示されるのではありません。「on」は表面に使います。'
   },
   {
     before: 'The mountains are clearly visible', wrong: 'under', after: 'the horizon.',
     correct: 'above',
+    correctSentenceJa: '山々は地平線の上にはっきりと見えます。',
     explanation: '"Above the horizon" means higher than the horizon line. "Under" would put the mountains below the horizon — invisible.',
     explanationJa: '「above the horizon」は地平線より高い位置を意味します。「under」では山が地平線の下、つまり見えないことになります。'
   },
   {
     before: 'The café is', wrong: 'behind', after: 'the bookshop and the pharmacy.',
     correct: 'between',
+    correctSentenceJa: 'カフェは本屋と薬局の間にあります。',
     explanation: '"Between" is used when something is in the middle of two things. "Behind" would mean it is at the back of both shops.',
     explanationJa: '「between」は二つのものの間にあることを表します。「behind」では両方の店の後ろにあることになります。'
   },
@@ -771,24 +795,28 @@ var errorAll = [
   {
     before: 'He got', wrong: 'in', after: 'the bus and found a seat.',
     correct: 'on',
+    correctSentenceJa: '彼はバスに乗り、席を見つけました。',
     explanation: 'We use "on" for public transport (buses, trains, planes). "In" is used for cars and taxis.',
     explanationJa: '公共交通機関（バス・電車・飛行機）には「on」を使います。「in」は車やタクシーに使います。'
   },
   {
     before: 'She walked', wrong: 'onto', after: 'the room and closed the door.',
     correct: 'into',
+    correctSentenceJa: '彼女は部屋に入り、ドアを閉めました。',
     explanation: '"Into" shows movement from outside to inside an enclosed space. "Onto" is for movement to a surface.',
     explanationJa: '「into」は囲まれた空間（部屋）の外から中への移動を表します。「onto」は表面への移動に使います。'
   },
   {
     before: 'The climber slipped and fell', wrong: 'into', after: 'the ladder.',
     correct: 'off',
+    correctSentenceJa: '登山者は滑って梯子から落ちました。',
     explanation: '"Off" shows movement away from a surface. "Into" would mean they fell inside something.',
     explanationJa: '「off」は表面（梯子）から離れる移動を表します。「into」では何かの中に落ちることになります。'
   },
   {
     before: 'They sailed', wrong: 'to', after: 'the harbour slowly.',
     correct: 'into',
+    correctSentenceJa: '彼らはゆっくりと港に入港しました。',
     explanation: '"Into" shows entering an enclosed space (a harbour). "To" is used for destinations but does not convey entering.',
     explanationJa: '「into」は囲まれた空間（港）に入ることを表します。「to」は目的地を示しますが、中に入るニュアンスはありません。'
   },
@@ -819,11 +847,16 @@ function loadErrors() {
     });
     sent.innerHTML = html;
 
+    var jaHint = document.createElement('div');
+    jaHint.className = 'sentence-ja-hint';
+    jaHint.textContent = q.correctSentenceJa;
+
     var rev = document.createElement('div');
     rev.className = 'err-reveal';
     rev.id = 'err-rev-' + i;
 
     wrapper.appendChild(sent);
+    wrapper.appendChild(jaHint);
     wrapper.appendChild(rev);
     list.appendChild(wrapper);
   });
@@ -861,36 +894,36 @@ function pickErr(el, idx, isWrong) {
 
 var matchAllSets = [
   [
-    { sentence: 'The milk is ___ the fridge.',                prep: 'in',      type: 'Place',     explainJa: '「in」は冷蔵庫（容器・囲まれた空間）の中にあることを表します。' },
-    { sentence: 'The train leaves ___ 8 a.m.',                prep: 'at',      type: 'Time',      explainJa: '「at」は正確な時刻に使います。午前8時は時計上の一点です。' },
-    { sentence: 'She dived ___ the water.',                   prep: 'into',    type: 'Direction', explainJa: '「into」は外から水の中（囲まれた空間）への移動を表します。' },
-    { sentence: 'He has lived here ___ 2015.',                prep: 'since',   type: 'Time',      explainJa: '「since」は継続している状況の起点（2015年）を示します。' },
-    { sentence: 'The car is parked ___ the building.',        prep: 'behind',  type: 'Place',     explainJa: '「behind」は建物の後ろ側にあることを表します。「in」では建物の内部になってしまいます。' },
-    { sentence: 'They ran ___ the finish line.',              prep: 'toward',  type: 'Direction', explainJa: '「toward」はゴールラインの方向への移動を表します。必ずしも到達するとは限りません。' },
+    { sentence: 'The milk is ___ the fridge.',                prep: 'in',      type: 'Place',     sentenceJa: '牛乳は冷蔵庫の中にあります。',                         explainJa: '「in」は冷蔵庫（容器・囲まれた空間）の中にあることを表します。' },
+    { sentence: 'The train leaves ___ 8 a.m.',                prep: 'at',      type: 'Time',      sentenceJa: '電車は午前8時に出発します。',                           explainJa: '「at」は正確な時刻に使います。午前8時は時計上の一点です。' },
+    { sentence: 'She dived ___ the water.',                   prep: 'into',    type: 'Direction', sentenceJa: '彼女は水の中に飛び込みました。',                         explainJa: '「into」は外から水の中（囲まれた空間）への移動を表します。' },
+    { sentence: 'He has lived here ___ 2015.',                prep: 'since',   type: 'Time',      sentenceJa: '彼は2015年からここに住んでいます。',                     explainJa: '「since」は継続している状況の起点（2015年）を示します。' },
+    { sentence: 'The car is parked ___ the building.',        prep: 'behind',  type: 'Place',     sentenceJa: '車は建物の裏に駐車されています。',                       explainJa: '「behind」は建物の後ろ側にあることを表します。「in」では建物の内部になってしまいます。' },
+    { sentence: 'They ran ___ the finish line.',              prep: 'toward',  type: 'Direction', sentenceJa: '彼らはゴールラインに向かって走りました。',               explainJa: '「toward」はゴールラインの方向への移動を表します。必ずしも到達するとは限りません。' },
   ],
   [
-    { sentence: 'We have class ___ Monday.',                  prep: 'on',      type: 'Time',      explainJa: '「on」は曜日・特定の日付に使います。' },
-    { sentence: 'She climbed ___ the stage.',                 prep: 'onto',    type: 'Direction', explainJa: '「onto」は高くなった面（ステージ）の上への移動を表します。' },
-    { sentence: 'The lamp hangs ___ the dining table.',       prep: 'above',   type: 'Place',     explainJa: '「above」は接触なしで上方にあることを表します。吊り下げランプはテーブルに触れずその上にあります。「on」では表面に接触していることになります。' },
-    { sentence: 'He waited ___ an hour.',                     prep: 'for',     type: 'Time',      explainJa: '「for」は期間（1時間という長さ）を表します。' },
-    { sentence: 'The cat jumped ___ the box.',                prep: 'out of',  type: 'Direction', explainJa: '「out of」は囲まれた空間（箱）の中から外への移動を表します。' },
-    { sentence: 'The pharmacy is ___ the two clinics.',       prep: 'between', type: 'Place',     explainJa: '「between」は二つの基準点（二つの診療所）の間にあることを表します。' },
+    { sentence: 'We have class ___ Monday.',                  prep: 'on',      type: 'Time',      sentenceJa: '私たちは月曜日に授業があります。',                       explainJa: '「on」は曜日・特定の日付に使います。' },
+    { sentence: 'She climbed ___ the stage.',                 prep: 'onto',    type: 'Direction', sentenceJa: '彼女はステージに上がりました。',                         explainJa: '「onto」は高くなった面（ステージ）の上への移動を表します。' },
+    { sentence: 'The lamp hangs ___ the dining table.',       prep: 'above',   type: 'Place',     sentenceJa: 'ランプはダイニングテーブルの上に吊り下がっています。',   explainJa: '「above」は接触なしで上方にあることを表します。吊り下げランプはテーブルに触れずその上にあります。「on」では表面に接触していることになります。' },
+    { sentence: 'He waited ___ an hour.',                     prep: 'for',     type: 'Time',      sentenceJa: '彼は1時間待ちました。',                                   explainJa: '「for」は期間（1時間という長さ）を表します。' },
+    { sentence: 'The cat jumped ___ the box.',                prep: 'out of',  type: 'Direction', sentenceJa: '猫は箱から飛び出しました。',                             explainJa: '「out of」は囲まれた空間（箱）の中から外への移動を表します。' },
+    { sentence: 'The pharmacy is ___ the two clinics.',       prep: 'between', type: 'Place',     sentenceJa: '薬局は二つの診療所の間にあります。',                     explainJa: '「between」は二つの基準点（二つの診療所）の間にあることを表します。' },
   ],
   [
-    { sentence: 'She was born ___ November.',                 prep: 'in',      type: 'Time',      explainJa: '「in」は月・季節・年など、大まかな期間に使います。' },
-    { sentence: 'They strolled ___ the canal.',               prep: 'along',   type: 'Direction', explainJa: '「along」は運河の長さに沿った移動を表します。' },
-    { sentence: 'Finish your homework ___ dinner.',           prep: 'before',  type: 'Time',      explainJa: '「before」は別の出来事（夕食）より前であることを表します。' },
-    { sentence: 'The remote is ___ the sofa.',                prep: 'under',   type: 'Place',     explainJa: '「under」はソファの真下にあることを表します。' },
-    { sentence: 'The drone flew ___ the crowd.',              prep: 'over',    type: 'Direction', explainJa: '「over」はドローンが群衆の上を飛んで横切る移動を表します。' },
-    { sentence: 'Stay seated ___ the show ends.',             prep: 'until',   type: 'Time',      explainJa: '「until」はショーが終わるまでという継続の終点を表します。' },
+    { sentence: 'She was born ___ November.',                 prep: 'in',      type: 'Time',      sentenceJa: '彼女は11月に生まれました。',                             explainJa: '「in」は月・季節・年など、大まかな期間に使います。' },
+    { sentence: 'They strolled ___ the canal.',               prep: 'along',   type: 'Direction', sentenceJa: '彼らは運河沿いを散歩しました。',                         explainJa: '「along」は運河の長さに沿った移動を表します。' },
+    { sentence: 'Finish your homework ___ dinner.',           prep: 'before',  type: 'Time',      sentenceJa: '夕食の前に宿題を終わらせなさい。',                       explainJa: '「before」は別の出来事（夕食）より前であることを表します。' },
+    { sentence: 'The remote is ___ the sofa.',                prep: 'under',   type: 'Place',     sentenceJa: 'リモコンはソファの下にあります。',                       explainJa: '「under」はソファの真下にあることを表します。' },
+    { sentence: 'The drone flew ___ the crowd.',              prep: 'over',    type: 'Direction', sentenceJa: 'ドローンは群衆の上を飛びました。',                       explainJa: '「over」はドローンが群衆の上を飛んで横切る移動を表します。' },
+    { sentence: 'Stay seated ___ the show ends.',             prep: 'until',   type: 'Time',      sentenceJa: 'ショーが終わるまで席に座っていてください。',             explainJa: '「until」はショーが終わるまでという継続の終点を表します。' },
   ],
   [
-    { sentence: 'She is standing ___ the side door.',         prep: 'at',      type: 'Place',     explainJa: '「at」は特定の場所・地点（側面のドア）を指し示します。' },
-    { sentence: 'He slid ___ the icy roof.',                  prep: 'off',     type: 'Direction', explainJa: '「off」は表面（屋根）から離れる移動を表します。' },
-    { sentence: 'Hand it in ___ Friday.',                     prep: 'by',      type: 'Time',      explainJa: '「by」は締め切りを表します。金曜日までに提出しなければなりません。' },
-    { sentence: 'The dog sat ___ its owner.',                 prep: 'next to', type: 'Place',     explainJa: '「next to」はすぐ隣にいることを表します。' },
-    { sentence: 'This bus departs ___ the city centre.',      prep: 'from',    type: 'Direction', explainJa: '「from」は出発点（市内中心部）を表します。' },
-    { sentence: 'They chatted ___ the interval.',             prep: 'during',  type: 'Time',      explainJa: '「during」は幕間という期間全体を通じてという意味です。' },
+    { sentence: 'She is standing ___ the side door.',         prep: 'at',      type: 'Place',     sentenceJa: '彼女は側面のドアのところに立っています。',               explainJa: '「at」は特定の場所・地点（側面のドア）を指し示します。' },
+    { sentence: 'He slid ___ the icy roof.',                  prep: 'off',     type: 'Direction', sentenceJa: '彼は凍った屋根から滑り落ちました。',                     explainJa: '「off」は表面（屋根）から離れる移動を表します。' },
+    { sentence: 'Hand it in ___ Friday.',                     prep: 'by',      type: 'Time',      sentenceJa: '金曜日までに提出してください。',                         explainJa: '「by」は締め切りを表します。金曜日までに提出しなければなりません。' },
+    { sentence: 'The dog sat ___ its owner.',                 prep: 'next to', type: 'Place',     sentenceJa: '犬は飼い主のすぐ隣に座りました。',                       explainJa: '「next to」はすぐ隣にいることを表します。' },
+    { sentence: 'This bus departs ___ the city centre.',      prep: 'from',    type: 'Direction', sentenceJa: 'このバスは市内中心部から出発します。',                   explainJa: '「from」は出発点（市内中心部）を表します。' },
+    { sentence: 'They chatted ___ the interval.',             prep: 'during',  type: 'Time',      sentenceJa: '彼らは幕間の間おしゃべりをしました。',                   explainJa: '「during」は幕間という期間全体を通じてという意味です。' },
   ],
 ];
 
@@ -912,12 +945,22 @@ function loadMatch() {
   var shuffledPreps = shuffle(matchSet.map(function(m) { return m.prep; }));
 
   matchSet.forEach(function(m, i) {
+    var wrap = document.createElement('div');
+
     var el = document.createElement('div');
     el.className = 'match-item';
     el.id = 'ms-' + i;
     el.textContent = m.sentence.replace('___', '______');
     el.onclick = function() { selectSentence(i); };
-    sentContainer.appendChild(el);
+
+    var jaHint = document.createElement('div');
+    jaHint.className = 'sentence-ja-hint';
+    jaHint.id = 'ms-ja-' + i;
+    jaHint.textContent = m.sentenceJa;
+
+    wrap.appendChild(el);
+    wrap.appendChild(jaHint);
+    sentContainer.appendChild(wrap);
   });
 
   shuffledPreps.forEach(function(p, i) {
