@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prepositions Worksheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --ink-soft: #4a4a6a;
+    --ink-faint: #9090b0;
+    --paper: #faf9f6;
+    --paper-warm: #f2f0ea;
+    --paper-mid: #e8e5dc;
+    --accent: #c04a2a;
+    --accent-light: #f5e8e4;
+    --accent-mid: #e8c4b8;
+    --teal: #1a6b5a;
+    --teal-light: #e0f0ea;
+    --amber: #a05a10;
+    --amber-light: #fdf0dc;
+    --violet: #4a3a8a;
+    --violet-light: #eeeaf8;
+    --blue: #1e4f8a;
+    --blue-light: #e4eef8;
+    --green: #1a5a30;
+    --green-light: #e0f0e8;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --shadow: 0 2px 12px rgba(26,26,46,0.08), 0 1px 3px rgba(26,26,46,0.06);
+    --shadow-card: 0 4px 24px rgba(26,26,46,0.10), 0 1px 4px rgba(26,26,46,0.06);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); min-height: 100vh; line-height: 1.6; }
+
+  .site-header { background: var(--ink); padding: 1.25rem 2rem; display: flex; align-items: center; gap: 1rem; }
+  .site-header .logo { font-family: 'Lora', serif; font-size: 1.1rem; color: var(--paper); font-weight: 600; letter-spacing: -0.01em; }
+  .site-header .logo span { color: var(--accent-mid); }
+  .site-header .subtitle { font-size: 0.75rem; color: var(--ink-faint); font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 1px; }
+  .level-pill { margin-left: auto; background: var(--teal); color: var(--paper); font-size: 0.7rem; font-weight: 600; padding: 4px 14px; border-radius: 99px; letter-spacing: 0.1em; white-space: nowrap; }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  .tab-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-bottom: 2rem; background: var(--paper-warm); border: 1px solid var(--paper-mid); border-radius: var(--radius); padding: 5px; }
+  .tab-btn { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; padding: 9px 6px; border-radius: calc(var(--radius) - 2px); border: none; background: transparent; color: var(--ink-soft); cursor: pointer; transition: all 0.18s ease; text-align: center; line-height: 1.2; }
+  .tab-btn:hover:not(.active) { background: var(--paper-mid); color: var(--ink); }
+  .tab-btn.active { background: var(--ink); color: var(--paper); box-shadow: var(--shadow); }
+
+  .card { background: #fff; border: 1px solid var(--paper-mid); border-radius: var(--radius); padding: 1.75rem 2rem; margin-bottom: 1rem; box-shadow: var(--shadow-card); animation: fadeUp 0.25s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .act-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px; }
+  .act-label::before { content: ''; display: block; width: 18px; height: 1.5px; background: var(--accent); flex-shrink: 0; }
+
+  .q-text { font-family: 'Lora', serif; font-size: 1.15rem; line-height: 1.5; color: var(--ink); margin-bottom: 1rem; }
+
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+  .badge { font-size: 0.72rem; font-weight: 500; padding: 3px 12px; border-radius: 99px; }
+  .b-blue   { background: var(--blue-light);   color: var(--blue); }
+  .b-teal   { background: var(--teal-light);   color: var(--teal); }
+  .b-amber  { background: var(--amber-light);  color: var(--amber); }
+  .b-accent { background: var(--accent-light); color: var(--accent); }
+  .b-violet { background: var(--violet-light); color: var(--violet); }
+  .b-green  { background: var(--green-light);  color: var(--green); }
+
+  .reveal { background: var(--blue-light); border-left: 3px solid var(--blue); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 0.85rem 1rem; margin-top: 1rem; font-size: 0.875rem; color: var(--blue); line-height: 1.6; display: none; }
+  .reveal.show { display: block; animation: fadeUp 0.2s ease both; }
+  .reveal.green { background: var(--green-light); border-color: var(--green); color: var(--green); }
+  .reveal.amber { background: var(--amber-light); border-color: var(--amber); color: var(--amber); }
+
+  .hint { background: var(--paper-warm); border: 1px solid var(--paper-mid); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.85rem; color: var(--ink-soft); line-height: 1.65; }
+  .hint b { color: var(--ink); font-weight: 600; }
+
+  .btn-row { display: flex; gap: 10px; margin-top: 1.5rem; flex-wrap: wrap; align-items: center; }
+  .btn-primary { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 500; padding: 10px 22px; border-radius: var(--radius-sm); border: none; background: var(--ink); color: var(--paper); cursor: pointer; transition: all 0.18s ease; display: inline-flex; align-items: center; gap: 6px; }
+  .btn-primary:hover { background: #2d2d50; transform: translateY(-1px); box-shadow: var(--shadow); }
+  .btn-secondary { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 400; padding: 10px 22px; border-radius: var(--radius-sm); border: 1.5px solid var(--paper-mid); background: #fff; color: var(--ink-soft); cursor: pointer; transition: all 0.15s; }
+  .btn-secondary:hover { background: var(--paper-warm); color: var(--ink); border-color: #ccc; }
+
+  .card-divider { height: 1px; background: var(--paper-mid); margin: 1.25rem 0; }
+
+  /* ── FILL IN THE BLANK ── */
+  .sentence-list { display: flex; flex-direction: column; gap: 0; }
+  .sentence-item { display: flex; align-items: center; gap: 10px; padding: 0.75rem 0; border-bottom: 1px solid var(--paper-mid); font-size: 0.95rem; color: var(--ink-soft); line-height: 1.6; }
+  .sentence-item:last-child { border-bottom: none; }
+  .sentence-num { font-size: 0.7rem; font-weight: 700; color: var(--ink-faint); min-width: 20px; flex-shrink: 0; text-align: right; }
+  .sentence-text { flex: 1; }
+  .sentence-status {
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700;
+    transition: all 0.2s ease;
+    opacity: 0; background: transparent;
+  }
+  .sentence-status.s-correct { opacity: 1; background: var(--green-light); color: var(--green); }
+  .sentence-status.s-wrong   { opacity: 1; background: var(--accent-light); color: var(--accent); }
+
+  .sentence-explain {
+    display: none;
+    font-size: 0.8rem;
+    line-height: 1.55;
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-sm);
+    margin-top: 4px;
+    margin-left: 30px;
+  }
+  .sentence-explain.show-correct {
+    display: block;
+    background: var(--green-light);
+    border-left: 3px solid var(--green);
+    color: var(--green);
+    animation: fadeUp 0.2s ease both;
+  }
+  .sentence-explain.show-wrong {
+    display: block;
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    color: var(--accent);
+    animation: fadeUp 0.2s ease both;
+  }
+  .sentence-explain .correct-word {
+    font-weight: 700;
+    background: var(--green-light);
+    border: 1px solid #8ecab8;
+    border-radius: 3px;
+    padding: 0 5px;
+    color: var(--green);
+  }
+  .sentence-explain.show-wrong .correct-word {
+    background: rgba(255,255,255,0.6);
+    border-color: rgba(26,90,48,0.3);
+  }
+  .explain-ja {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    font-size: 0.78rem;
+    line-height: 1.65;
+    opacity: 0.85;
+  }
+  .sentence-item-wrap {
+    border-bottom: 1px solid var(--paper-mid);
+    padding: 0.2rem 0 0.6rem;
+  }
+  .sentence-item-wrap:last-child { border-bottom: none; }
+  .sentence-item { display: flex; align-items: center; gap: 10px; padding: 0.55rem 0 0.2rem; border-bottom: none; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.6; }
+
+  .word-box-grid { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+  .word-chip { font-size: 0.8rem; font-weight: 600; padding: 4px 14px; border-radius: 99px; background: var(--paper-warm); border: 1px solid var(--paper-mid); color: var(--ink-soft); cursor: pointer; transition: all 0.15s; font-family: 'DM Sans', sans-serif; user-select: none; }
+  .word-chip:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .word-chip.selected-chip { background: var(--ink); color: var(--paper); border-color: var(--ink); outline: 2px solid var(--teal); outline-offset: 2px; }
+
+  .blank-slot { display: inline-block; min-width: 80px; border-bottom: 2px solid var(--paper-mid); color: var(--teal); font-weight: 600; font-size: 0.93rem; text-align: center; cursor: pointer; padding: 1px 6px; border-radius: 2px; transition: all 0.15s; vertical-align: middle; margin: 0 3px; }
+  .blank-slot:hover { border-color: var(--ink-faint); background: var(--paper-warm); }
+  .blank-slot.correct { border-color: var(--green); background: var(--green-light); color: var(--green); cursor: default; }
+  .blank-slot.wrong   { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+
+  .score-bar { background: var(--paper-warm); border: 1px solid var(--paper-mid); border-radius: var(--radius-sm); padding: 0.7rem 1rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 1rem; }
+  .score-val { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+  .score-val .s-correct { color: var(--green); }
+  .score-val .s-wrong   { color: var(--accent); }
+  .score-val .s-remain  { color: var(--ink-faint); }
+
+  /* ── SORT IT OUT ── */
+  .sort-question { background: var(--paper-warm); border: 1px solid var(--paper-mid); border-radius: var(--radius); padding: 1.1rem 1.4rem; margin-bottom: 1rem; }
+  .sort-sentence { font-family: 'Lora', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 0.6rem; line-height: 1.5; }
+  .sort-sentence .prep-highlight { background: var(--ink); color: var(--paper); padding: 1px 7px; border-radius: 3px; font-style: normal; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 600; }
+  .sort-options { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 0.5rem; }
+  .sort-btn { font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; padding: 6px 18px; border-radius: 99px; border: 1.5px solid var(--paper-mid); background: #fff; color: var(--ink-soft); cursor: pointer; transition: all 0.15s; }
+  .sort-btn:hover { background: var(--blue-light); border-color: #b8d2ee; color: var(--blue); }
+  .sort-btn.selected-correct { background: var(--green-light); border-color: var(--green); color: var(--green); font-weight: 700; }
+  .sort-btn.selected-wrong   { background: var(--accent-light); border-color: var(--accent-mid); color: var(--accent); }
+  .sort-btn.show-correct     { background: var(--green-light); border-color: var(--green); color: var(--green); font-weight: 700; }
+  .sort-btn.disabled { opacity: 0.45; pointer-events: none; }
+
+  /* ── SPOT THE ERROR ── */
+  .error-sentence { font-family: 'Lora', serif; font-size: 1.05rem; line-height: 1.65; color: var(--ink); background: var(--paper-warm); border: 1px solid var(--paper-mid); border-radius: var(--radius); padding: 1.1rem 1.4rem; margin-bottom: 0.6rem; }
+  .err-word { display: inline-block; padding: 1px 4px; border-radius: 3px; cursor: pointer; border: 1.5px solid transparent; transition: all 0.15s; }
+  .err-word:hover { background: var(--amber-light); border-color: #e8d0a8; color: var(--amber); }
+  .err-word.correct-pick { background: var(--accent-light); border-color: var(--accent-mid); color: var(--accent); text-decoration: line-through; }
+  .err-word.wrong-pick   { background: var(--paper-mid); border-color: #ccc; color: var(--ink-faint); }
+  .err-word.reveal-target { background: var(--green-light); border-color: var(--green); color: var(--green); font-weight: 700; }
+  .err-reveal { background: var(--green-light); border-left: 3px solid var(--green); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 0.75rem 1rem; font-size: 0.875rem; color: var(--green); display: none; margin-top: 0.5rem; line-height: 1.6; }
+  .err-reveal.wrong-rev { background: var(--blue-light); border-left-color: var(--blue); color: var(--blue); }
+  .err-reveal.show { display: block; animation: fadeUp 0.2s ease both; }
+
+  /* ── MATCH UP ── */
+  .match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1rem; }
+  .match-col-label { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px; }
+  .match-item { font-size: 0.875rem; padding: 0.65rem 1rem; border-radius: var(--radius-sm); border: 1.5px solid var(--paper-mid); background: #fff; cursor: pointer; transition: all 0.15s; color: var(--ink-soft); line-height: 1.4; font-family: 'DM Sans', sans-serif; }
+  .match-item:hover { background: var(--blue-light); border-color: #b8d2ee; color: var(--blue); }
+  .match-item.selected { background: var(--violet-light); border-color: #bbb5e0; color: var(--violet); font-weight: 600; }
+  .match-item.matched  { background: var(--green-light); border-color: #8ecab8; color: var(--green); pointer-events: none; }
+  .match-item.wrong    { background: var(--accent-light); border-color: var(--accent-mid); color: var(--accent); }
+  .match-explain {
+    font-size: 0.75rem;
+    color: var(--green);
+    background: var(--green-light);
+    border-left: 3px solid var(--green);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 0.45rem 0.75rem;
+    margin-top: 4px;
+    line-height: 1.55;
+    animation: fadeUp 0.2s ease both;
+  }
+
+  @media (max-width: 520px) {
+    .container { padding: 1rem 1rem 3rem; }
+    .card { padding: 1.25rem 1.25rem; }
+    .tab-nav { grid-template-columns: repeat(2, 1fr); }
+    .tab-btn { font-size: 0.72rem; padding: 8px 4px; }
+    .match-grid { grid-template-columns: 1fr; }
+    .site-header { padding: 1rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div>
+    <div class="logo">Prepositions <span>Worksheet</span></div>
+    <div class="subtitle">Place · Time · Direction</div>
+  </div>
+  <div class="level-pill">A2 – B1</div>
+</header>
+
+<div class="container">
+
+  <nav class="tab-nav" id="nav">
+    <button class="tab-btn active" onclick="show('fillin')">Fill in the Blank</button>
+    <button class="tab-btn" onclick="show('sortit')">Sort It Out</button>
+    <button class="tab-btn" onclick="show('spottherror')">Spot the Error</button>
+    <button class="tab-btn" onclick="show('matchup')">Match Up</button>
+  </nav>
+
+  <!-- ══════════════════════════════════ FILL IN THE BLANK -->
+  <div id="fillin">
+    <div class="card">
+      <div class="act-label">Fill in the Blank</div>
+      <div class="q-text">Click a word from the box, then click a blank to place it. Each answer is checked immediately.</div>
+      <div class="badges">
+        <span class="badge b-teal">Place / Position</span>
+        <span class="badge b-blue">Time</span>
+        <span class="badge b-accent">Direction</span>
+      </div>
+
+      <div class="match-col-label" style="margin-top:0.25rem">Section 1 — Prepositions of Place</div>
+      <div class="word-box-grid" id="wbox-place"></div>
+      <div class="sentence-list" id="slist-place"></div>
+
+      <div class="card-divider"></div>
+
+      <div class="match-col-label">Section 2 — Prepositions of Time</div>
+      <div class="word-box-grid" id="wbox-time"></div>
+      <div class="sentence-list" id="slist-time"></div>
+
+      <div class="card-divider"></div>
+
+      <div class="match-col-label">Section 3 — Prepositions of Direction</div>
+      <div class="word-box-grid" id="wbox-dir"></div>
+      <div class="sentence-list" id="slist-dir"></div>
+
+      <div class="score-bar" style="margin-top:1.5rem">
+        <span>Score</span>
+        <span class="score-val">
+          <span class="s-correct" id="fi-correct">0</span> correct &nbsp;·&nbsp;
+          <span class="s-wrong"   id="fi-wrong">0</span> wrong &nbsp;·&nbsp;
+          <span class="s-remain"  id="fi-remaining">0</span> remaining
+        </span>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn-secondary" onclick="resetFillin()">↺ Reset</button>
+      </div>
+    </div>
+    <div class="hint"><b>Teacher tip:</b> After all blanks are filled, ask the student to read each section aloud. For any red answer, cover the sentence and ask them to try once more from memory before revealing the correct word.</div>
+  </div>
+
+  <!-- ══════════════════════════════════ SORT IT OUT -->
+  <div id="sortit" style="display:none">
+    <div class="card">
+      <div class="act-label">Sort It Out</div>
+      <div class="q-text">The highlighted word is a preposition. Decide whether it expresses <strong>Place</strong>, <strong>Time</strong>, or <strong>Direction</strong>.</div>
+      <div class="badges">
+        <span class="badge b-teal">Place</span>
+        <span class="badge b-blue">Time</span>
+        <span class="badge b-accent">Direction</span>
+      </div>
+      <div class="score-bar">
+        <span>Score</span>
+        <span class="score-val"><span id="sort-score">0</span> / <span id="sort-total">0</span></span>
+      </div>
+      <div id="sort-list"></div>
+      <div class="btn-row">
+        <button class="btn-primary" onclick="loadSort()">New set →</button>
+      </div>
+    </div>
+    <div class="hint"><b>Teacher tip:</b> After each answer, ask "How do you know?" Encourage the student to use a rule — e.g. "It tells me <em>where something is</em>, so it's Place."</div>
+  </div>
+
+  <!-- ══════════════════════════════════ SPOT THE ERROR -->
+  <div id="spottherror" style="display:none">
+    <div class="card">
+      <div class="act-label">Spot the Error</div>
+      <div class="q-text">Each sentence has one wrong preposition. Click the word you think is incorrect.</div>
+      <div class="badges">
+        <span class="badge b-accent">One error per sentence</span>
+        <span class="badge b-amber">Click to identify it</span>
+      </div>
+      <div class="score-bar">
+        <span>Score</span>
+        <span class="score-val"><span id="err-score">0</span> / <span id="err-total">0</span></span>
+      </div>
+      <div id="err-list"></div>
+      <div class="btn-row">
+        <button class="btn-primary" onclick="loadErrors()">New set →</button>
+      </div>
+    </div>
+    <div class="hint"><b>Teacher tip:</b> If the student is unsure, ask them to substitute a different preposition aloud and decide which sounds more natural. Always discuss <em>why</em> the correct answer works.</div>
+  </div>
+
+  <!-- ══════════════════════════════════ MATCH UP -->
+  <div id="matchup" style="display:none">
+    <div class="card">
+      <div class="act-label">Match Up</div>
+      <div class="q-text">Click a sentence, then click the preposition that completes it correctly.</div>
+      <div class="badges">
+        <span class="badge b-violet">Click to select a sentence</span>
+        <span class="badge b-teal">Then click its preposition</span>
+      </div>
+      <div class="score-bar">
+        <span>Matched</span>
+        <span class="score-val"><span id="match-score">0</span> / <span id="match-total">0</span></span>
+      </div>
+      <div class="match-grid">
+        <div>
+          <div class="match-col-label">Sentence</div>
+          <div id="match-sentences" style="display:flex;flex-direction:column;gap:7px"></div>
+        </div>
+        <div>
+          <div class="match-col-label">Preposition</div>
+          <div id="match-preps" style="display:flex;flex-direction:column;gap:7px"></div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-primary" onclick="loadMatch()">New set →</button>
+      </div>
+    </div>
+    <div class="hint"><b>Teacher tip:</b> Once all pairs are matched, cover the preposition column and ask the student to complete each sentence from memory. Swap roles — teacher covers the sentence, student explains the meaning of each preposition.</div>
+  </div>
+
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────── HELPERS
+function show(id) {
+  ['fillin','sortit','spottherror','matchup'].forEach(function(s) {
+    document.getElementById(s).style.display = s === id ? '' : 'none';
+  });
+  document.querySelectorAll('.tab-btn').forEach(function(b, i) {
+    b.classList.toggle('active', ['fillin','sortit','spottherror','matchup'][i] === id);
+  });
+}
+function shuffle(arr) {
+  var a = arr.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function escAttr(s) { return String(s).replace(/"/g,'&quot;'); }
+
+// ─────────────────────────────────────────────────────────── FILL IN THE BLANK
+// Each section has exactly as many sentences as there are words in the box.
+// Every answer is unique within each section to avoid ambiguity.
+
+var fiPlaceWords = ['in','on','at','under','over','next to','behind','between','above','below'];
+var fiPlaceSentences = [
+  { text: 'The milk is ___ the fridge.',                   answer: 'in',      explain: '"In" is used for enclosed spaces. The fridge is a container, so things are inside it.',                                                                    explainJa: '「in」は囲まれた空間に使います。冷蔵庫は容器なので、物はその中（内側）にあります。' },
+  { text: 'Her glasses are ___ the table.',                answer: 'on',      explain: '"On" describes contact with a surface. The glasses are resting on top of the table.',                                                                       explainJa: '「on」は表面に接触していることを表します。メガネはテーブルの上に置かれています。' },
+  { text: 'She is standing ___ the entrance.',             answer: 'at',      explain: '"At" pinpoints a specific location or point — here, the exact spot of the entrance.',                                                                       explainJa: '「at」は特定の場所や地点を示します。ここでは入口というまさにその場所を指しています。' },
+  { text: 'The dog is sleeping ___ the bench.',            answer: 'under',   explain: '"Under" means directly beneath something. The dog is below the bench, sheltered by it.',                                                                    explainJa: '「under」は何かのすぐ真下にあることを意味します。犬はベンチの下で休んでいます。' },
+  { text: 'The bridge arches ___ the river.',              answer: 'over',    explain: '"Over" means directly above, spanning from one side to the other — describing the bridge\'s arch.',                                                         explainJa: '「over」は真上にあり、一方から他方へ広がることを意味します。橋がアーチを描いて川の上に架かっている様子を表しています。' },
+  { text: 'He sat ___ his sister at dinner.',              answer: 'next to', explain: '"Next to" means immediately beside someone. He and his sister were in adjacent seats.',                                                                     explainJa: '「next to」はすぐ隣にいることを意味します。彼と妹／姉は隣り合った席に座っていました。' },
+  { text: 'The garden is ___ the house.',                  answer: 'behind',  explain: '"Behind" means at the back of something. The garden is on the rear side of the house.',                                                                     explainJa: '「behind」は何かの後ろ側にあることを意味します。庭は家の裏側にあります。' },
+  { text: 'The post office is ___ the bank and the café.', answer: 'between', explain: '"Between" places something in the middle of two reference points — the bank on one side, the café on the other.',                                           explainJa: '「between」は二つの基準点の間にあることを表します。銀行とカフェのそれぞれの間に郵便局があります。' },
+  { text: 'The smoke alarm is ___ the door.',              answer: 'above',   explain: '"Above" means higher than something without touching it. The alarm is mounted on the wall higher up than the door frame.',                                   explainJa: '「above」は何かより高い位置にあり、接触はしていないことを意味します。警報器はドア枠より高い壁に取り付けられています。' },
+  { text: 'The village lies ___ the hilltop.',             answer: 'below',   explain: '"Below" means at a lower level. The village is further down the slope than the top of the hill.',                                                           explainJa: '「below」はより低い位置にあることを意味します。村は丘の頂上よりも斜面の下の方にあります。' },
+];
+
+var fiTimeWords = ['at','on','in','since','for','before','after','during','by','until'];
+var fiTimeSentences = [
+  { text: 'The library closes ___ 9 p.m.',                answer: 'at',     explain: '"At" is used with precise clock times. 9 p.m. is an exact point on the clock.',                                                                             explainJa: '「at」は正確な時刻に使います。午後9時は時計上の正確な時点です。' },
+  { text: 'We have football practice ___ Saturday.',      answer: 'on',     explain: '"On" is used with days of the week and specific dates.',                                                                                                       explainJa: '「on」は曜日や特定の日付に使います。' },
+  { text: 'He was promoted ___ the spring.',              answer: 'in',     explain: '"In" is used with seasons, months, and years — longer, less precise periods of time.',                                                                        explainJa: '「in」は季節・月・年など、より長く大まかな期間に使います。' },
+  { text: 'She has worked there ___ she graduated.',      answer: 'since',  explain: '"Since" marks the starting point of a continuing situation. Graduating was the moment it began.',                                                             explainJa: '「since」は継続している状況の起点を示します。卒業した瞬間がその始まりです。' },
+  { text: 'The power was out ___ six hours.',             answer: 'for',    explain: '"For" measures a duration — how long something lasted. Six hours is a period of time, not a point.',                                                          explainJa: '「for」は期間を表します。6時間は時点ではなく、続いた時間の長さです。' },
+  { text: 'Please read the instructions ___ you start.',  answer: 'before', explain: '"Before" means earlier than another event. Reading comes first, starting the task comes second.',                                                             explainJa: '「before」は別の出来事より前であることを意味します。読むことが先で、作業を始めることが後です。' },
+  { text: 'We had coffee ___ the meeting.',               answer: 'after',  explain: '"After" means later than another event. The coffee happened once the meeting had ended.',                                                                     explainJa: '「after」は別の出来事より後であることを意味します。会議が終わってからコーヒーを飲みました。' },
+  { text: 'Please keep quiet ___ the ceremony.',          answer: 'during', explain: '"During" means throughout a period or event. Silence is required for the whole length of the ceremony.',                                                      explainJa: '「during」はある期間やイベントの全体を通じてという意味です。式典の間ずっと静粛にする必要があります。' },
+  { text: 'The report must be submitted ___ Friday.',     answer: 'by',     explain: '"By" sets a deadline — the report must arrive no later than Friday. It could be earlier, but not after.',                                                     explainJa: '「by」は締め切りを設定します。レポートは金曜日までに提出しなければなりません。それより早くても構いませんが、遅れてはいけません。' },
+  { text: 'Stay in your seat ___ the bell rings.',        answer: 'until',  explain: '"Until" marks the endpoint of a continuing action. Staying seated is ongoing right up to the moment the bell rings.',                                        explainJa: '「until」は継続する動作の終点を示します。ベルが鳴る瞬間まで、ずっと座り続けることを表しています。' },
+];
+
+var fiDirWords = ['to','into','onto','out of','off','from','toward','over','along'];
+var fiDirSentences = [
+  { text: 'She drove ___ the airport.',             answer: 'to',     explain: '"To" shows the destination of a journey. The airport is where she was heading.',                                                                                   explainJa: '「to」は移動の目的地を示します。空港が彼女の向かっていた場所です。' },
+  { text: 'The children ran ___ the building.',     answer: 'into',   explain: '"Into" shows movement from outside to inside an enclosed space. The children entered the building.',                                                                explainJa: '「into」は囲まれた空間の外から中への移動を示します。子供たちは建物の中に入りました。' },
+  { text: 'He stepped ___ the stage.',              answer: 'onto',   explain: '"Onto" shows movement to a surface or platform. The stage is a raised surface he moved up onto.',                                                                  explainJa: '「onto」は表面や台の上への移動を示します。ステージは彼が上に乗った高い台です。' },
+  { text: 'She climbed ___ the car and stretched.', answer: 'out of', explain: '"Out of" shows movement from inside to outside an enclosed space. She exited the car.',                                                                            explainJa: '「out of」は囲まれた空間の内側から外への移動を示します。彼女は車から外に出ました。' },
+  { text: 'The skier launched ___ the ramp.',       answer: 'off',    explain: '"Off" shows movement away from a surface. The skier left the ramp\'s surface and became airborne.',                                                                explainJa: '「off」は表面から離れる動きを示します。スキーヤーはランプの面を離れ、空中に飛び出しました。' },
+  { text: 'This train departs ___ Osaka.',          answer: 'from',   explain: '"From" shows the origin or starting point of a journey. Osaka is where the train sets off.',                                                                       explainJa: '「from」は移動の出発点・起点を示します。大阪がこの列車の出発地です。' },
+  { text: 'The crowd moved ___ the exit.',          answer: 'toward', explain: '"Toward" shows the direction of movement without necessarily reaching the destination. The crowd was heading in that direction.',                                   explainJa: '「toward」は必ずしも目的地に到達しなくても、その方向への移動を示します。群衆はその方向に向かっていました。' },
+  { text: 'The helicopter flew ___ the village.',   answer: 'over',   explain: '"Over" shows movement across and above an area. The helicopter passed above the village in flight.',                                                               explainJa: '「over」はある地域の上を横切る移動を示します。ヘリコプターは飛行中に村の上を通過しました。' },
+  { text: 'We cycled ___ the canal path.',          answer: 'along',  explain: '"Along" shows movement following the length of something — a path, road, or river.',                                                                              explainJa: '「along」は道・道路・川などの長さに沿った移動を示します。' },
+];
+
+var fiSelected = null;
+
+function buildFillin() {
+  buildWordBox('wbox-place', fiPlaceWords, 'place');
+  buildWordBox('wbox-time',  fiTimeWords,  'time');
+  buildWordBox('wbox-dir',   fiDirWords,   'dir');
+  buildSentenceList('slist-place', fiPlaceSentences, 'place');
+  buildSentenceList('slist-time',  fiTimeSentences,  'time');
+  buildSentenceList('slist-dir',   fiDirSentences,   'dir');
+}
+
+function buildWordBox(cid, words, group) {
+  var c = document.getElementById(cid);
+  c.innerHTML = '';
+  words.forEach(function(w) {
+    var chip = document.createElement('span');
+    chip.className = 'word-chip';
+    chip.textContent = w;
+    chip.dataset.word = w;
+    chip.dataset.group = group;
+    chip.id = 'chip-' + group + '-' + w.replace(/\s/g,'_');
+    chip.onclick = function() { selectWord(group, w, chip); };
+    c.appendChild(chip);
+  });
+}
+
+function buildSentenceList(cid, sentences, group) {
+  var c = document.getElementById(cid);
+  c.innerHTML = '';
+  sentences.forEach(function(s, i) {
+    var wrap = document.createElement('div');
+    wrap.className = 'sentence-item-wrap';
+
+    var item = document.createElement('div');
+    item.className = 'sentence-item';
+
+    var num = document.createElement('span');
+    num.className = 'sentence-num';
+    num.textContent = (i + 1) + '.';
+
+    var textEl = document.createElement('span');
+    textEl.className = 'sentence-text';
+    var parts = s.text.split('___');
+    textEl.innerHTML = escHtml(parts[0]) +
+      '<span class="blank-slot" id="slot-' + group + '-' + i +
+      '" data-answer="' + escAttr(s.answer) +
+      '" data-group="' + group +
+      '" onclick="fillSlot(this)">&thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&thinsp;</span>' +
+      escHtml(parts[1]);
+
+    var status = document.createElement('span');
+    status.className = 'sentence-status';
+    status.id = 'status-' + group + '-' + i;
+
+    item.appendChild(num);
+    item.appendChild(textEl);
+    item.appendChild(status);
+
+    var expl = document.createElement('div');
+    expl.className = 'sentence-explain';
+    expl.id = 'explain-' + group + '-' + i;
+
+    wrap.appendChild(item);
+    wrap.appendChild(expl);
+    c.appendChild(wrap);
+  });
+}
+
+function selectWord(group, word, chip) {
+  // Deselect all chips in the same group
+  document.querySelectorAll('.word-chip').forEach(function(c) {
+    if (c.dataset.group === group) c.classList.remove('selected-chip');
+  });
+  // Toggle off if same chip clicked again
+  if (fiSelected && fiSelected.group === group && fiSelected.word === word) {
+    fiSelected = null;
+    return;
+  }
+  fiSelected = { group: group, word: word };
+  chip.classList.add('selected-chip');
+}
+
+function fillSlot(slot) {
+  if (!fiSelected) return;
+  // Wrong section — flash
+  if (fiSelected.group !== slot.dataset.group) {
+    var orig = slot.style.background;
+    slot.style.background = 'var(--accent-light)';
+    setTimeout(function() { slot.style.background = orig; }, 500);
+    return;
+  }
+  // Correct answer already locked — do nothing
+  if (slot.classList.contains('correct')) return;
+
+  var word   = fiSelected.word;
+  var answer = slot.dataset.answer.trim().toLowerCase();
+  slot.textContent = word;
+  slot.classList.remove('wrong', 'correct');
+
+  var statusId = slot.id.replace('slot-', 'status-');
+  var statusEl = document.getElementById(statusId);
+  var explId   = slot.id.replace('slot-', 'explain-');
+  var explEl   = document.getElementById(explId);
+
+  // Find the sentence data to get the explanation text
+  var parts   = slot.id.split('-');   // ['slot', group, index]
+  var grp     = parts[1];
+  var idx     = parseInt(parts[2]);
+  var sentArr = grp === 'place' ? fiPlaceSentences : grp === 'time' ? fiTimeSentences : fiDirSentences;
+  var sentData = sentArr[idx];
+
+  if (word.trim().toLowerCase() === answer) {
+    slot.classList.add('correct');
+    if (statusEl) { statusEl.className = 'sentence-status s-correct'; statusEl.textContent = '✓'; }
+    if (explEl && sentData) {
+      explEl.innerHTML = '<span class="correct-word">' + escHtml(sentData.answer) + '</span> — ' + escHtml(sentData.explain)
+        + '<div class="explain-ja">' + escHtml(sentData.explainJa) + '</div>';
+      explEl.className = 'sentence-explain show-correct';
+    }
+  } else {
+    slot.classList.add('wrong');
+    if (statusEl) { statusEl.className = 'sentence-status s-wrong'; statusEl.textContent = '✗'; }
+    if (explEl && sentData) {
+      explEl.innerHTML = 'The correct answer is <span class="correct-word">' + escHtml(sentData.answer) + '</span> — ' + escHtml(sentData.explain)
+        + '<div class="explain-ja">' + escHtml(sentData.explainJa) + '</div>';
+      explEl.className = 'sentence-explain show-wrong';
+    }
+  }
+  // Deselect chip
+  document.querySelectorAll('.word-chip').forEach(function(c) { c.classList.remove('selected-chip'); });
+  fiSelected = null;
+  updateFillinScore();
+}
+
+function updateFillinScore() {
+  var correct = 0, wrong = 0, remaining = 0;
+  document.querySelectorAll('.blank-slot').forEach(function(s) {
+    if (s.classList.contains('correct'))      correct++;
+    else if (s.classList.contains('wrong'))   wrong++;
+    else                                      remaining++;
+  });
+  document.getElementById('fi-correct').textContent   = correct;
+  document.getElementById('fi-wrong').textContent     = wrong;
+  document.getElementById('fi-remaining').textContent = remaining;
+}
+
+function resetFillin() {
+  document.querySelectorAll('.blank-slot').forEach(function(slot) {
+    slot.innerHTML = '&thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&thinsp;';
+    slot.classList.remove('correct', 'wrong');
+    var statusId = slot.id.replace('slot-', 'status-');
+    var statusEl = document.getElementById(statusId);
+    if (statusEl) { statusEl.className = 'sentence-status'; statusEl.textContent = ''; }
+    var explId = slot.id.replace('slot-', 'explain-');
+    var explEl = document.getElementById(explId);
+    if (explEl) { explEl.className = 'sentence-explain'; explEl.innerHTML = ''; }
+  });
+  document.querySelectorAll('.word-chip').forEach(function(c) { c.classList.remove('selected-chip'); });
+  fiSelected = null;
+  updateFillinScore();
+}
+
+// ─────────────────────────────────────────────────────────── SORT IT OUT
+// All sentences are unambiguous:
+//   - "over/above/below" only appear as Place when clearly static (no movement verb)
+//   - "from" only appears as Direction (removed the Time "from X to Y" entry)
+//   - "inside/beside" removed (not in the reference sheet)
+
+var sortAll = [
+  // ── PLACE (static position, no movement verb)
+  { sentence: 'The spare key is <mark>under</mark> the doormat.',      answer: 'Place',     prep: 'under',   hint: '"Under" tells us where the key is — a position, not a time or movement.',                                          hintJa: '「under」は鍵の位置（場所）を表しています。時間でも動きでもありません。' },
+  { sentence: 'The dog is sleeping <mark>on</mark> the sofa.',         answer: 'Place',     prep: 'on',      hint: '"On" describes where the dog is — resting on a surface.',                                                           hintJa: '「on」は犬がいる場所（表面の上）を表しています。' },
+  { sentence: 'Meet me <mark>at</mark> the main entrance.',            answer: 'Place',     prep: 'at',      hint: '"At" points to a specific location.',                                                                               hintJa: '「at」は特定の場所（正面玄関）を指し示しています。' },
+  { sentence: 'The town is <mark>between</mark> two rivers.',          answer: 'Place',     prep: 'between', hint: '"Between" says where the town is positioned.',                                                                      hintJa: '「between」は町の位置（二つの川の間）を表しています。' },
+  { sentence: 'The attic is <mark>above</mark> the second floor.',     answer: 'Place',     prep: 'above',   hint: '"Above" tells us the static position — higher than something else.',                                               hintJa: '「above」は静的な位置（2階より上）を表しています。' },
+  { sentence: 'The cat is hiding <mark>behind</mark> the curtain.',    answer: 'Place',     prep: 'behind',  hint: '"Behind" tells us where the cat is.',                                                                               hintJa: '「behind」は猫のいる場所（カーテンの後ろ）を表しています。' },
+  { sentence: 'The valley is <mark>below</mark> the snow line.',       answer: 'Place',     prep: 'below',   hint: '"Below" tells us the static position — lower than something else.',                                               hintJa: '「below」は静的な位置（雪線より下）を表しています。' },
+  { sentence: 'He was standing <mark>next to</mark> the window.',      answer: 'Place',     prep: 'next to', hint: '"Next to" tells us where he was standing.',                                                                        hintJa: '「next to」は彼が立っていた場所（窓のすぐ隣）を表しています。' },
+  { sentence: 'The mug is <mark>in</mark> the cupboard.',              answer: 'Place',     prep: 'in',      hint: '"In" tells us where the mug is.',                                                                                  hintJa: '「in」はマグカップのある場所（食器棚の中）を表しています。' },
+  // ── TIME
+  { sentence: 'The concert starts <mark>at</mark> seven o\'clock.',    answer: 'Time',      prep: 'at',      hint: '"At" is used with specific clock times.',                                                                           hintJa: '「at」は正確な時刻（7時）に使います。' },
+  { sentence: 'I always feel tired <mark>on</mark> Monday mornings.',  answer: 'Time',      prep: 'on',      hint: '"On" is used with days of the week.',                                                                               hintJa: '「on」は曜日（月曜日）に使います。' },
+  { sentence: 'She was born <mark>in</mark> the winter.',              answer: 'Time',      prep: 'in',      hint: '"In" is used with seasons and months.',                                                                             hintJa: '「in」は季節・月などに使います。' },
+  { sentence: 'He has worked here <mark>since</mark> January.',        answer: 'Time',      prep: 'since',   hint: '"Since" marks a point in time when something started.',                                                            hintJa: '「since」は何かが始まった時点（1月）を示します。' },
+  { sentence: 'We waited <mark>for</mark> nearly an hour.',            answer: 'Time',      prep: 'for',     hint: '"For" is used with a duration — an amount of time.',                                                               hintJa: '「for」は期間（約1時間という長さ）に使います。' },
+  { sentence: 'She always showers <mark>before</mark> breakfast.',     answer: 'Time',      prep: 'before',  hint: '"Before" says something happens earlier than another event.',                                                      hintJa: '「before」は別の出来事（朝食）より前に起こることを表します。' },
+  { sentence: 'We went for a walk <mark>after</mark> lunch.',          answer: 'Time',      prep: 'after',   hint: '"After" says something happens later than another event.',                                                         hintJa: '「after」は別の出来事（昼食）より後に起こることを表します。' },
+  { sentence: 'No one spoke <mark>during</mark> the announcement.',    answer: 'Time',      prep: 'during',  hint: '"During" tells us a period within which something happened.',                                                      hintJa: '「during」は何かが起こった期間（アナウンスの間）を表します。' },
+  { sentence: 'Please return the books <mark>by</mark> Thursday.',     answer: 'Time',      prep: 'by',      hint: '"By" gives a deadline — no later than that time.',                                                                 hintJa: '「by」は締め切り（木曜日まで）を表します。' },
+  { sentence: 'Keep stirring <mark>until</mark> the sugar dissolves.', answer: 'Time',      prep: 'until',   hint: '"Until" gives the endpoint of an action.',                                                                         hintJa: '「until」は動作の終点（砂糖が溶けるまで）を表します。' },
+  // ── DIRECTION (always involves movement)
+  { sentence: 'She walked <mark>toward</mark> the station.',           answer: 'Direction', prep: 'toward',  hint: 'She is moving — "toward" shows the direction.',                                                                    hintJa: '彼女は移動しています。「toward」はその方向（駅の方向）を示します。' },
+  { sentence: 'He jumped <mark>into</mark> the swimming pool.',        answer: 'Direction', prep: 'into',    hint: '"Into" shows movement from outside to inside.',                                                                    hintJa: '「into」は外から中（プールの中）への移動を示します。' },
+  { sentence: 'The cat leapt <mark>onto</mark> the fence.',            answer: 'Direction', prep: 'onto',    hint: '"Onto" shows movement to a surface.',                                                                              hintJa: '「onto」は表面（フェンス）の上への移動を示します。' },
+  { sentence: 'She stepped <mark>out of</mark> the lift.',             answer: 'Direction', prep: 'out of',  hint: '"Out of" shows movement from inside to outside.',                                                                  hintJa: '「out of」は内側（エレベーター）から外への移動を示します。' },
+  { sentence: 'He slid <mark>off</mark> the wet bench.',               answer: 'Direction', prep: 'off',     hint: '"Off" shows movement away from a surface.',                                                                        hintJa: '「off」は表面（濡れたベンチ）から離れる移動を示します。' },
+  { sentence: 'They cycled <mark>along</mark> the seafront.',          answer: 'Direction', prep: 'along',   hint: '"Along" shows movement following the length of a path.',                                                           hintJa: '「along」は海岸線という道の長さに沿った移動を示します。' },
+  { sentence: 'The kite soared <mark>over</mark> the rooftops.',       answer: 'Direction', prep: 'over',    hint: 'The kite is moving — "over" shows its direction of travel.',                                                       hintJa: '凧は移動しています。「over」は屋根の上を横切る移動の方向を示します。' },
+  { sentence: 'She drove <mark>to</mark> the nearest hospital.',       answer: 'Direction', prep: 'to',      hint: '"To" shows the destination of movement.',                                                                          hintJa: '「to」は移動の目的地（最寄りの病院）を示します。' },
+  { sentence: 'He ran <mark>from</mark> the dog as fast as he could.', answer: 'Direction', prep: 'from',    hint: '"From" here shows the starting point of movement away.',                                                           hintJa: '「from」はここでは犬から離れる動きの起点を示します。' },
+];
+
+var sortQueue = [], sortScore = 0, sortAnswered = 0;
+
+function loadSort() {
+  sortScore = 0; sortAnswered = 0;
+  // Pick a balanced set: 3 Place, 3 Time, 3 Direction
+  var places = shuffle(sortAll.filter(function(q){ return q.answer === 'Place'; })).slice(0,3);
+  var times  = shuffle(sortAll.filter(function(q){ return q.answer === 'Time'; })).slice(0,3);
+  var dirs   = shuffle(sortAll.filter(function(q){ return q.answer === 'Direction'; })).slice(0,3);
+  sortQueue  = shuffle(places.concat(times).concat(dirs));
+  document.getElementById('sort-score').textContent = 0;
+  document.getElementById('sort-total').textContent = 0;
+  var list = document.getElementById('sort-list');
+  list.innerHTML = '';
+  sortQueue.forEach(function(q, i) {
+    var block = document.createElement('div');
+    block.className = 'sort-question';
+    block.id = 'sq-' + i;
+    var sent = document.createElement('div');
+    sent.className = 'sort-sentence';
+    sent.innerHTML = q.sentence.replace(/<mark>/g,'<span class="prep-highlight">').replace(/<\/mark>/g,'</span>');
+    var opts = document.createElement('div');
+    opts.className = 'sort-options';
+    ['Place','Time','Direction'].forEach(function(type) {
+      var btn = document.createElement('button');
+      btn.className = 'sort-btn';
+      btn.textContent = type;
+      btn.onclick = function() { answerSort(i, type, btn); };
+      opts.appendChild(btn);
+    });
+    var rev = document.createElement('div');
+    rev.className = 'reveal';
+    rev.id = 'sq-rev-' + i;
+    block.appendChild(sent);
+    block.appendChild(opts);
+    block.appendChild(rev);
+    list.appendChild(block);
+  });
+}
+
+function answerSort(idx, chosen, btn) {
+  var q = sortQueue[idx];
+  var block = document.getElementById('sq-' + idx);
+  block.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.add('disabled'); });
+  var rev = document.getElementById('sq-rev-' + idx);
+  sortAnswered++;
+  if (chosen === q.answer) {
+    btn.classList.add('selected-correct');
+    sortScore++;
+    rev.innerHTML = '✓ Correct! ' + escHtml(q.hint) + '<div class="explain-ja">' + escHtml(q.hintJa) + '</div>';
+    rev.className = 'reveal green show';
+  } else {
+    btn.classList.add('selected-wrong');
+    block.querySelectorAll('.sort-btn').forEach(function(b) {
+      if (b.textContent === q.answer) b.classList.add('show-correct');
+    });
+    rev.innerHTML = '✗ Not quite — this is a preposition of <strong>' + escHtml(q.answer) + '</strong>. ' + escHtml(q.hint) + '<div class="explain-ja">' + escHtml(q.hintJa) + '</div>';
+    rev.className = 'reveal show';
+  }
+  document.getElementById('sort-score').textContent = sortScore;
+  document.getElementById('sort-total').textContent = sortAnswered;
+}
+
+// ─────────────────────────────────────────────────────────── SPOT THE ERROR
+// Rules applied:
+//  - The wrong preposition is always a real preposition from the reference list
+//  - The wrong word must be recognisably wrong (not a close call)
+//  - The explanation names the rule clearly
+//  - No sentence reuses the same wrong/correct pair as another
+
+var errorAll = [
+  // TIME errors
+  {
+    before: 'She has studied French', wrong: 'since', after: 'five years.',
+    correct: 'for',
+    explanation: '"Since" needs a specific point in time (e.g. since 2019). "For" is used with a period of time (for five years).',
+    explanationJa: '「since」は特定の時点（例：since 2019）が必要です。「for」は期間（for five years）に使います。'
+  },
+  {
+    before: 'I wake up', wrong: 'in', after: '6 a.m. every day.',
+    correct: 'at',
+    explanation: '"At" is used with clock times. "In" is used with months, years, and parts of the day (in the morning).',
+    explanationJa: '「at」は時刻に使います。「in」は月・年・時間帯（in the morning）に使います。'
+  },
+  {
+    before: 'The festival takes place', wrong: 'at', after: 'August every year.',
+    correct: 'in',
+    explanation: '"In" is used with months and years. "At" is used with specific clock times.',
+    explanationJa: '「in」は月・年に使います。「at」は具体的な時刻に使います。'
+  },
+  {
+    before: 'Please finish the task', wrong: 'until', after: 'noon.',
+    correct: 'by',
+    explanation: '"By" sets a deadline — no later than noon. "Until" describes continuing up to a point (wait until noon).',
+    explanationJa: '「by」は締め切り（正午まで）を表します。「until」は正午まで継続することを表します（wait until noon）。'
+  },
+  {
+    before: 'We must wait', wrong: 'by', after: 'the results are ready.',
+    correct: 'until',
+    explanation: '"Until" shows the endpoint of a continuing action. "By" gives a deadline for a completed action.',
+    explanationJa: '「until」は継続する動作の終点を表します。「by」は完了した動作の締め切りを表します。'
+  },
+  {
+    before: 'She arrived', wrong: 'after', after: 'the meeting started.',
+    correct: 'before',
+    explanation: 'The sentence says she arrived — implying she was there early. "Before" is the correct word here.',
+    explanationJa: '文は彼女が到着したことを述べており、早めにそこにいたことを意味します。「before」がここでは正しい語です。'
+  },
+  {
+    before: 'No photographs are allowed', wrong: 'after', after: 'the performance.',
+    correct: 'during',
+    explanation: '"During" means throughout a period. "After" would mean photographs are banned once the show is over, which changes the meaning.',
+    explanationJa: '「during」はある期間全体を通じてという意味です。「after」では公演が終わった後に写真撮影が禁止されることになり、意味が変わってしまいます。'
+  },
+  // PLACE errors
+  {
+    before: 'The keys are hanging', wrong: 'below', after: 'the hook on the wall.',
+    correct: 'on',
+    explanation: 'Keys hang on a hook, not below it. "Below" would mean they are lower than the hook, not attached to it.',
+    explanationJa: '鍵はフックに掛かっています（on a hook）。「below」だとフックより下の位置になり、掛かっていないことになります。'
+  },
+  {
+    before: 'She is waiting', wrong: 'in', after: 'the bus stop.',
+    correct: 'at',
+    explanation: '"At" is used with named locations and stops. "In" would suggest she is inside the bus stop structure.',
+    explanationJa: '「at」は特定の場所や停留所に使います。「in」だと彼女がバス停の構造物の中にいることになります。'
+  },
+  {
+    before: 'The flight information is displayed', wrong: 'under', after: 'the screen.',
+    correct: 'on',
+    explanation: 'Information is displayed on a screen, not under it. "On" is used for surfaces.',
+    explanationJa: '情報はスクリーンに（on）表示されます。その下（under）に表示されるのではありません。「on」は表面に使います。'
+  },
+  {
+    before: 'The mountains are clearly visible', wrong: 'under', after: 'the horizon.',
+    correct: 'above',
+    explanation: '"Above the horizon" means higher than the horizon line. "Under" would put the mountains below the horizon — invisible.',
+    explanationJa: '「above the horizon」は地平線より高い位置を意味します。「under」では山が地平線の下、つまり見えないことになります。'
+  },
+  {
+    before: 'The café is', wrong: 'behind', after: 'the bookshop and the pharmacy.',
+    correct: 'between',
+    explanation: '"Between" is used when something is in the middle of two things. "Behind" would mean it is at the back of both shops.',
+    explanationJa: '「between」は二つのものの間にあることを表します。「behind」では両方の店の後ろにあることになります。'
+  },
+  // DIRECTION errors
+  {
+    before: 'He got', wrong: 'in', after: 'the bus and found a seat.',
+    correct: 'on',
+    explanation: 'We use "on" for public transport (buses, trains, planes). "In" is used for cars and taxis.',
+    explanationJa: '公共交通機関（バス・電車・飛行機）には「on」を使います。「in」は車やタクシーに使います。'
+  },
+  {
+    before: 'She walked', wrong: 'onto', after: 'the room and closed the door.',
+    correct: 'into',
+    explanation: '"Into" shows movement from outside to inside an enclosed space. "Onto" is for movement to a surface.',
+    explanationJa: '「into」は囲まれた空間（部屋）の外から中への移動を表します。「onto」は表面への移動に使います。'
+  },
+  {
+    before: 'The climber slipped and fell', wrong: 'into', after: 'the ladder.',
+    correct: 'off',
+    explanation: '"Off" shows movement away from a surface. "Into" would mean they fell inside something.',
+    explanationJa: '「off」は表面（梯子）から離れる移動を表します。「into」では何かの中に落ちることになります。'
+  },
+  {
+    before: 'They sailed', wrong: 'to', after: 'the harbour slowly.',
+    correct: 'into',
+    explanation: '"Into" shows entering an enclosed space (a harbour). "To" is used for destinations but does not convey entering.',
+    explanationJa: '「into」は囲まれた空間（港）に入ることを表します。「to」は目的地を示しますが、中に入るニュアンスはありません。'
+  },
+];
+
+var errQueue = [], errScore = 0, errAnswered = 0;
+
+function loadErrors() {
+  errScore = 0; errAnswered = 0;
+  errQueue = shuffle(errorAll).slice(0, 8);
+  document.getElementById('err-score').textContent = 0;
+  document.getElementById('err-total').textContent = 0;
+  var list = document.getElementById('err-list');
+  list.innerHTML = '';
+  errQueue.forEach(function(q, i) {
+    var wrapper = document.createElement('div');
+    wrapper.style.marginBottom = '0.9rem';
+
+    var sent = document.createElement('div');
+    sent.className = 'error-sentence';
+    var html = '';
+    q.before.split(' ').forEach(function(w) {
+      html += '<span class="err-word" data-idx="' + i + '" data-role="other" onclick="pickErr(this,' + i + ',false)">' + escHtml(w) + '</span> ';
+    });
+    html += '<span class="err-word" id="err-target-' + i + '" data-idx="' + i + '" data-role="wrong" onclick="pickErr(this,' + i + ',true)">' + escHtml(q.wrong) + '</span> ';
+    q.after.split(' ').forEach(function(w) {
+      html += '<span class="err-word" data-idx="' + i + '" data-role="other" onclick="pickErr(this,' + i + ',false)">' + escHtml(w) + '</span> ';
+    });
+    sent.innerHTML = html;
+
+    var rev = document.createElement('div');
+    rev.className = 'err-reveal';
+    rev.id = 'err-rev-' + i;
+
+    wrapper.appendChild(sent);
+    wrapper.appendChild(rev);
+    list.appendChild(wrapper);
+  });
+}
+
+function pickErr(el, idx, isWrong) {
+  var q = errQueue[idx];
+  document.querySelectorAll('[data-idx="' + idx + '"]').forEach(function(w) {
+    w.onclick = null;
+    w.style.cursor = 'default';
+  });
+  errAnswered++;
+  var rev = document.getElementById('err-rev-' + idx);
+  var target = document.getElementById('err-target-' + idx);
+  var jaLine = '<div class="explain-ja">' + escHtml(q.explanationJa) + '</div>';
+  if (isWrong) {
+    el.classList.add('correct-pick');
+    errScore++;
+    rev.innerHTML = '✓ Correct! <strong>"' + escHtml(q.wrong) + '"</strong> should be <strong>"' + escHtml(q.correct) + '"</strong>. ' + escHtml(q.explanation) + jaLine;
+    rev.className = 'err-reveal show';
+  } else {
+    el.classList.add('wrong-pick');
+    target.classList.add('reveal-target');
+    rev.innerHTML = '✗ Not that one. The wrong preposition was <strong>"' + escHtml(q.wrong) + '"</strong> — it should be <strong>"' + escHtml(q.correct) + '"</strong>. ' + escHtml(q.explanation) + jaLine;
+    rev.className = 'err-reveal wrong-rev show';
+  }
+  document.getElementById('err-score').textContent = errScore;
+  document.getElementById('err-total').textContent = errAnswered;
+}
+
+// ─────────────────────────────────────────────────────────── MATCH UP
+// Four sets of 6, balanced across categories.
+// No sentence appears in more than one set.
+// Prepositions within each set are all distinct to ensure one clear answer per sentence.
+
+var matchAllSets = [
+  [
+    { sentence: 'The milk is ___ the fridge.',                prep: 'in',      type: 'Place',     explainJa: '「in」は冷蔵庫（容器・囲まれた空間）の中にあることを表します。' },
+    { sentence: 'The train leaves ___ 8 a.m.',                prep: 'at',      type: 'Time',      explainJa: '「at」は正確な時刻に使います。午前8時は時計上の一点です。' },
+    { sentence: 'She dived ___ the water.',                   prep: 'into',    type: 'Direction', explainJa: '「into」は外から水の中（囲まれた空間）への移動を表します。' },
+    { sentence: 'He has lived here ___ 2015.',                prep: 'since',   type: 'Time',      explainJa: '「since」は継続している状況の起点（2015年）を示します。' },
+    { sentence: 'The car is parked ___ the building.',        prep: 'behind',  type: 'Place',     explainJa: '「behind」は建物の後ろ側にあることを表します。「in」では建物の内部になってしまいます。' },
+    { sentence: 'They ran ___ the finish line.',              prep: 'toward',  type: 'Direction', explainJa: '「toward」はゴールラインの方向への移動を表します。必ずしも到達するとは限りません。' },
+  ],
+  [
+    { sentence: 'We have class ___ Monday.',                  prep: 'on',      type: 'Time',      explainJa: '「on」は曜日・特定の日付に使います。' },
+    { sentence: 'She climbed ___ the stage.',                 prep: 'onto',    type: 'Direction', explainJa: '「onto」は高くなった面（ステージ）の上への移動を表します。' },
+    { sentence: 'The lamp hangs ___ the dining table.',       prep: 'above',   type: 'Place',     explainJa: '「above」は接触なしで上方にあることを表します。吊り下げランプはテーブルに触れずその上にあります。「on」では表面に接触していることになります。' },
+    { sentence: 'He waited ___ an hour.',                     prep: 'for',     type: 'Time',      explainJa: '「for」は期間（1時間という長さ）を表します。' },
+    { sentence: 'The cat jumped ___ the box.',                prep: 'out of',  type: 'Direction', explainJa: '「out of」は囲まれた空間（箱）の中から外への移動を表します。' },
+    { sentence: 'The pharmacy is ___ the two clinics.',       prep: 'between', type: 'Place',     explainJa: '「between」は二つの基準点（二つの診療所）の間にあることを表します。' },
+  ],
+  [
+    { sentence: 'She was born ___ November.',                 prep: 'in',      type: 'Time',      explainJa: '「in」は月・季節・年など、大まかな期間に使います。' },
+    { sentence: 'They strolled ___ the canal.',               prep: 'along',   type: 'Direction', explainJa: '「along」は運河の長さに沿った移動を表します。' },
+    { sentence: 'Finish your homework ___ dinner.',           prep: 'before',  type: 'Time',      explainJa: '「before」は別の出来事（夕食）より前であることを表します。' },
+    { sentence: 'The remote is ___ the sofa.',                prep: 'under',   type: 'Place',     explainJa: '「under」はソファの真下にあることを表します。' },
+    { sentence: 'The drone flew ___ the crowd.',              prep: 'over',    type: 'Direction', explainJa: '「over」はドローンが群衆の上を飛んで横切る移動を表します。' },
+    { sentence: 'Stay seated ___ the show ends.',             prep: 'until',   type: 'Time',      explainJa: '「until」はショーが終わるまでという継続の終点を表します。' },
+  ],
+  [
+    { sentence: 'She is standing ___ the side door.',         prep: 'at',      type: 'Place',     explainJa: '「at」は特定の場所・地点（側面のドア）を指し示します。' },
+    { sentence: 'He slid ___ the icy roof.',                  prep: 'off',     type: 'Direction', explainJa: '「off」は表面（屋根）から離れる移動を表します。' },
+    { sentence: 'Hand it in ___ Friday.',                     prep: 'by',      type: 'Time',      explainJa: '「by」は締め切りを表します。金曜日までに提出しなければなりません。' },
+    { sentence: 'The dog sat ___ its owner.',                 prep: 'next to', type: 'Place',     explainJa: '「next to」はすぐ隣にいることを表します。' },
+    { sentence: 'This bus departs ___ the city centre.',      prep: 'from',    type: 'Direction', explainJa: '「from」は出発点（市内中心部）を表します。' },
+    { sentence: 'They chatted ___ the interval.',             prep: 'during',  type: 'Time',      explainJa: '「during」は幕間という期間全体を通じてという意味です。' },
+  ],
+];
+
+var matchSet = [], matchSelectedSentence = null, matchSolved = 0;
+
+function loadMatch() {
+  var setIdx = Math.floor(Math.random() * matchAllSets.length);
+  matchSet = matchAllSets[setIdx];
+  matchSelectedSentence = null;
+  matchSolved = 0;
+  document.getElementById('match-score').textContent = 0;
+  document.getElementById('match-total').textContent = matchSet.length;
+
+  var sentContainer = document.getElementById('match-sentences');
+  var prepContainer = document.getElementById('match-preps');
+  sentContainer.innerHTML = '';
+  prepContainer.innerHTML = '';
+
+  var shuffledPreps = shuffle(matchSet.map(function(m) { return m.prep; }));
+
+  matchSet.forEach(function(m, i) {
+    var el = document.createElement('div');
+    el.className = 'match-item';
+    el.id = 'ms-' + i;
+    el.textContent = m.sentence.replace('___', '______');
+    el.onclick = function() { selectSentence(i); };
+    sentContainer.appendChild(el);
+  });
+
+  shuffledPreps.forEach(function(p, i) {
+    var el = document.createElement('div');
+    el.className = 'match-item';
+    el.id = 'mp-' + p.replace(/\s/g,'_');
+    el.textContent = p;
+    el.dataset.prep = p;
+    el.onclick = function() { selectPrep(p, el); };
+    prepContainer.appendChild(el);
+  });
+}
+
+function selectSentence(idx) {
+  document.querySelectorAll('#match-sentences .match-item:not(.matched)').forEach(function(el) {
+    el.classList.remove('selected');
+  });
+  matchSelectedSentence = idx;
+  var el = document.getElementById('ms-' + idx);
+  if (el && !el.classList.contains('matched')) el.classList.add('selected');
+}
+
+function selectPrep(prep, el) {
+  if (matchSelectedSentence === null) return;
+  var sentEl = document.getElementById('ms-' + matchSelectedSentence);
+  if (!sentEl || sentEl.classList.contains('matched')) return;
+
+  var correctPrep = matchSet[matchSelectedSentence].prep;
+  var m = matchSet[matchSelectedSentence];
+
+  if (prep === correctPrep) {
+    sentEl.classList.remove('selected');
+    sentEl.classList.add('matched');
+    sentEl.textContent = m.sentence.replace('___', prep);
+    el.classList.add('matched');
+    el.textContent = prep + ' ✓';
+
+    // Append explanation below matched sentence
+    var expl = document.createElement('div');
+    expl.className = 'match-explain';
+    expl.innerHTML = escHtml(m.explainJa);
+    sentEl.insertAdjacentElement('afterend', expl);
+
+    matchSolved++;
+    document.getElementById('match-score').textContent = matchSolved;
+  } else {
+    sentEl.classList.add('wrong');
+    el.classList.add('wrong');
+    setTimeout(function() {
+      sentEl.classList.remove('wrong');
+      el.classList.remove('wrong');
+    }, 700);
+  }
+  matchSelectedSentence = null;
+  document.querySelectorAll('#match-sentences .match-item').forEach(function(e) { e.classList.remove('selected'); });
+}
+
+// ─────────────────────────────────────────────────────────── INIT
+buildFillin();
+updateFillinScore();
+loadSort();
+loadErrors();
+loadMatch();
+</script>
+</body>
+</html>
