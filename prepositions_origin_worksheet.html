@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prepositions of Origin &amp; Source</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e; --ink-soft: #4a4a6a; --ink-faint: #9090b0;
+    --paper: #faf9f6; --paper-warm: #f2f0ea; --paper-mid: #e8e5dc;
+    --accent: #c04a2a; --accent-light: #f5e8e4; --accent-mid: #e8c4b8;
+    --teal: #1a6b5a; --teal-light: #e0f0ea;
+    --amber: #a05a10; --amber-light: #fdf0dc;
+    --violet: #4a3a8a; --violet-light: #eeeaf8;
+    --blue: #1e4f8a; --blue-light: #e4eef8;
+    --green: #1a5a30; --green-light: #e0f0e8;
+    --radius: 10px; --radius-sm: 6px;
+    --shadow: 0 2px 12px rgba(26,26,46,0.08), 0 1px 3px rgba(26,26,46,0.06);
+    --shadow-card: 0 4px 24px rgba(26,26,46,0.10), 0 1px 4px rgba(26,26,46,0.06);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); min-height: 100vh; line-height: 1.6; }
+
+  /* ── HEADER ── */
+  .site-header { background: var(--ink); padding: 1.25rem 2rem; display: flex; align-items: center; gap: 1rem; }
+  .site-header .logo { font-family: 'Lora', serif; font-size: 1.1rem; color: var(--paper); font-weight: 600; }
+  .site-header .logo span { color: var(--accent-mid); }
+  .site-header .subtitle { font-size: 0.75rem; color: var(--ink-faint); font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 1px; }
+  .level-pill { margin-left: auto; background: var(--teal); color: var(--paper); font-size: 0.7rem; font-weight: 600; padding: 4px 14px; border-radius: 99px; letter-spacing: 0.1em; white-space: nowrap; }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  /* ── TABS ── */
+  .tab-nav { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; margin-bottom: 2rem; background: var(--paper-warm); border: 1px solid var(--paper-mid); border-radius: var(--radius); padding: 5px; }
+  .tab-btn { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 500; padding: 9px 4px; border-radius: calc(var(--radius) - 2px); border: none; background: transparent; color: var(--ink-soft); cursor: pointer; transition: all 0.18s ease; text-align: center; line-height: 1.2; }
+  .tab-btn:hover:not(.active) { background: var(--paper-mid); color: var(--ink); }
+  .tab-btn.active { background: var(--ink); color: var(--paper); box-shadow: var(--shadow); }
+
+  /* ── CARDS ── */
+  .card { background: #fff; border: 1px solid var(--paper-mid); border-radius: var(--radius); padding: 1.75rem 2rem; margin-bottom: 1rem; box-shadow: var(--shadow-card); animation: fadeUp 0.25s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .card-divider { height: 1px; background: var(--paper-mid); margin: 1.25rem 0; }
+
+  .act-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px; }
+  .act-label::before { content: ''; display: block; width: 18px; height: 1.5px; background: var(--accent); flex-shrink: 0; }
+  .q-text { font-family: 'Lora', serif; font-size: 1.1rem; line-height: 1.5; color: var(--ink); margin-bottom: 1rem; }
+
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+  .badge { font-size: 0.72rem; font-weight: 500; padding: 3px 12px; border-radius: 99px; }
+  .b-blue   { background: var(--blue-light);   color: var(--blue); }
+  .b-teal   { background: var(--teal-light);   color: var(--teal); }
+  .b-amber  { background: var(--amber-light);  color: var(--amber); }
+  .b-accent { background: var(--accent-light); color: var(--accent); }
+  .b-violet { background: var(--violet-light); color: var(--violet); }
+  .b-green  { background: var(--green-light);  color: var(--green); }
+
+  .hint-box { background: var(--paper-warm); border: 1px solid var(--paper-mid); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 0.85rem; color: var(--ink-soft); line-height: 1.65; }
+  .hint-box b { color: var(--ink); font-weight: 600; }
+
+  .btn-row { display: flex; gap: 10px; margin-top: 1.5rem; flex-wrap: wrap; align-items: center; }
+  .btn-primary { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 500; padding: 10px 22px; border-radius: var(--radius-sm); border: none; background: var(--ink); color: var(--paper); cursor: pointer; transition: all 0.18s ease; }
+  .btn-primary:hover { background: #2d2d50; transform: translateY(-1px); box-shadow: var(--shadow); }
+  .btn-secondary { font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 400; padding: 10px 22px; border-radius: var(--radius-sm); border: 1.5px solid var(--paper-mid); background: #fff; color: var(--ink-soft); cursor: pointer; transition: all 0.15s; }
+  .btn-secondary:hover { background: var(--paper-warm); color: var(--ink); border-color: #ccc; }
+
+  /* ── REFERENCE PANEL ── */
+  .ref-toggle { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; padding: 0.85rem 1.25rem; border-radius: var(--radius); border: 1px solid var(--paper-mid); background: var(--paper-warm); color: var(--ink-soft); cursor: pointer; text-align: left; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; transition: all 0.15s; }
+  .ref-toggle:hover { background: var(--paper-mid); color: var(--ink); }
+  .ref-toggle .arrow { font-size: 0.8rem; transition: transform 0.2s; }
+  .ref-toggle.open .arrow { transform: rotate(180deg); }
+  .ref-panel { display: none; margin-bottom: 1rem; }
+  .ref-panel.open { display: block; animation: fadeUp 0.2s ease both; }
+
+  .ref-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .ref-entry { border: 1px solid var(--paper-mid); border-radius: var(--radius-sm); overflow: hidden; }
+  .ref-prep { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.85rem; padding: 7px 14px; background: var(--ink); color: var(--paper); display: flex; align-items: center; gap: 10px; }
+  .ref-prep .ref-tag { font-size: 0.65rem; font-weight: 500; padding: 2px 8px; border-radius: 99px; background: rgba(255,255,255,0.15); letter-spacing: 0.05em; }
+  .ref-body { padding: 10px 14px; display: flex; flex-direction: column; gap: 6px; }
+  .ref-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.82rem; }
+  .ref-en { font-family: 'Lora', serif; font-style: italic; color: var(--ink-soft); }
+  .ref-ja { color: var(--ink-faint); font-size: 0.78rem; }
+  .ref-note { font-size: 0.78rem; color: var(--ink-faint); padding: 6px 10px; background: var(--paper-warm); border-radius: var(--radius-sm); margin-top: 4px; border-left: 2px solid var(--paper-mid); }
+
+  /* ── TRIPTYCH (from comparison) ── */
+  .triptych { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 1rem 0; }
+  .trip-card { border-radius: var(--radius-sm); padding: 10px 12px; border: 1px solid var(--paper-mid); }
+  .trip-card.tc-a { background: var(--blue-light); border-color: #b8d2ee; }
+  .trip-card.tc-b { background: var(--teal-light); border-color: #8ecab8; }
+  .trip-card.tc-c { background: var(--amber-light); border-color: #e8d0a8; }
+  .trip-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+  .tc-a .trip-label { color: var(--blue); }
+  .tc-b .trip-label { color: var(--teal); }
+  .tc-c .trip-label { color: var(--amber); }
+  .trip-en { font-family: 'Lora', serif; font-size: 0.88rem; font-style: italic; color: var(--ink); margin-bottom: 3px; }
+  .trip-ja { font-size: 0.74rem; color: var(--ink-faint); }
+
+  /* ── SCORE BAR ── */
+  .score-bar { background: var(--paper-warm); border: 1px solid var(--paper-mid); border-radius: var(--radius-sm); padding: 0.7rem 1rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 1rem; }
+  .score-val { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+  .s-correct { color: var(--green); } .s-wrong { color: var(--accent); } .s-remain { color: var(--ink-faint); }
+
+  /* ── FILL IN THE BLANK ── */
+  .word-box-grid { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+  .word-chip { font-size: 0.8rem; font-weight: 600; padding: 4px 14px; border-radius: 99px; background: var(--paper-warm); border: 1px solid var(--paper-mid); color: var(--ink-soft); cursor: pointer; transition: all 0.15s; user-select: none; }
+  .word-chip:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .word-chip.selected-chip { background: var(--ink); color: var(--paper); border-color: var(--ink); outline: 2px solid var(--teal); outline-offset: 2px; }
+
+  .sentence-item-wrap { border-bottom: 1px solid var(--paper-mid); padding: 0.2rem 0 0.6rem; }
+  .sentence-item-wrap:last-child { border-bottom: none; }
+  .sentence-item { display: flex; align-items: center; gap: 10px; padding: 0.55rem 0 0.2rem; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.6; }
+  .sentence-num { font-size: 0.7rem; font-weight: 700; color: var(--ink-faint); min-width: 22px; flex-shrink: 0; text-align: right; }
+  .sentence-text { flex: 1; }
+  .sentence-status { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; transition: all 0.2s ease; opacity: 0; background: transparent; }
+  .sentence-status.s-correct { opacity: 1; background: var(--green-light); color: var(--green); }
+  .sentence-status.s-wrong   { opacity: 1; background: var(--accent-light); color: var(--accent); }
+
+  .sentence-ja-hint { font-size: 0.78rem; color: var(--ink-faint); padding: 2px 0 4px 30px; line-height: 1.5; font-style: italic; }
+
+  .blank-slot { display: inline-block; min-width: 72px; border-bottom: 2px solid var(--paper-mid); color: var(--teal); font-weight: 600; font-size: 0.93rem; text-align: center; cursor: pointer; padding: 1px 6px; border-radius: 2px; transition: all 0.15s; vertical-align: middle; margin: 0 3px; }
+  .blank-slot:hover { border-color: var(--ink-faint); background: var(--paper-warm); }
+  .blank-slot.correct { border-color: var(--green); background: var(--green-light); color: var(--green); cursor: default; }
+  .blank-slot.wrong   { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+
+  .sentence-explain { display: none; font-size: 0.8rem; line-height: 1.55; padding: 0.5rem 0.85rem; border-radius: var(--radius-sm); margin-top: 4px; margin-left: 30px; }
+  .sentence-explain.show-correct { display: block; background: var(--green-light); border-left: 3px solid var(--green); color: var(--green); animation: fadeUp 0.2s ease both; }
+  .sentence-explain.show-wrong   { display: block; background: var(--accent-light); border-left: 3px solid var(--accent); color: var(--accent); animation: fadeUp 0.2s ease both; }
+  .sentence-explain .correct-word { font-weight: 700; background: var(--green-light); border: 1px solid #8ecab8; border-radius: 3px; padding: 0 5px; color: var(--green); }
+  .sentence-explain.show-wrong .correct-word { background: rgba(255,255,255,0.6); border-color: rgba(26,90,48,0.3); }
+  .explain-ja { margin-top: 5px; padding-top: 5px; border-top: 1px solid rgba(0,0,0,0.08); font-size: 0.78rem; line-height: 1.65; opacity: 0.85; }
+
+  /* ── CHOOSE THE FORM ── */
+  .ctf-question { background: var(--paper-warm); border: 1px solid var(--paper-mid); border-radius: var(--radius); padding: 1.1rem 1.4rem; margin-bottom: 1rem; }
+  .ctf-prompt { font-family: 'Lora', serif; font-size: 1rem; color: var(--ink); margin-bottom: 3px; line-height: 1.5; }
+  .ctf-ja { font-size: 0.78rem; color: var(--ink-faint); font-style: italic; margin-bottom: 0.65rem; }
+  .ctf-options { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 0.5rem; }
+  .ctf-btn { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500; padding: 6px 16px; border-radius: 99px; border: 1.5px solid var(--paper-mid); background: #fff; color: var(--ink-soft); cursor: pointer; transition: all 0.15s; }
+  .ctf-btn:hover { background: var(--blue-light); border-color: #b8d2ee; color: var(--blue); }
+  .ctf-btn.selected-correct { background: var(--green-light); border-color: var(--green); color: var(--green); font-weight: 700; }
+  .ctf-btn.selected-wrong   { background: var(--accent-light); border-color: var(--accent-mid); color: var(--accent); }
+  .ctf-btn.show-correct     { background: var(--green-light); border-color: var(--green); color: var(--green); font-weight: 700; }
+  .ctf-btn.disabled { opacity: 0.45; pointer-events: none; }
+  .ctf-reveal { display: none; font-size: 0.82rem; line-height: 1.6; padding: 0.6rem 0.9rem; border-radius: var(--radius-sm); margin-top: 0.5rem; }
+  .ctf-reveal.show-correct { display: block; background: var(--green-light); border-left: 3px solid var(--green); color: var(--green); animation: fadeUp 0.2s ease both; }
+  .ctf-reveal.show-wrong   { display: block; background: var(--blue-light); border-left: 3px solid var(--blue); color: var(--blue); animation: fadeUp 0.2s ease both; }
+
+  /* ── SPOT THE ERROR ── */
+  .error-sentence { font-family: 'Lora', serif; font-size: 1.05rem; line-height: 1.65; color: var(--ink); background: var(--paper-warm); border: 1px solid var(--paper-mid); border-radius: var(--radius); padding: 1.1rem 1.4rem; margin-bottom: 0.4rem; }
+  .err-word { display: inline-block; padding: 1px 4px; border-radius: 3px; cursor: pointer; border: 1.5px solid transparent; transition: all 0.15s; }
+  .err-word:hover { background: var(--amber-light); border-color: #e8d0a8; color: var(--amber); }
+  .err-word.correct-pick { background: var(--accent-light); border-color: var(--accent-mid); color: var(--accent); text-decoration: line-through; }
+  .err-word.wrong-pick   { background: var(--paper-mid); border-color: #ccc; color: var(--ink-faint); }
+  .err-word.reveal-target { background: var(--green-light); border-color: var(--green); color: var(--green); font-weight: 700; }
+  .err-reveal { display: none; font-size: 0.875rem; line-height: 1.6; padding: 0.75rem 1rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-top: 0.4rem; }
+  .err-reveal.show-right { display: block; background: var(--green-light); border-left: 3px solid var(--green); color: var(--green); animation: fadeUp 0.2s ease both; }
+  .err-reveal.show-wrong { display: block; background: var(--blue-light); border-left: 3px solid var(--blue); color: var(--blue); animation: fadeUp 0.2s ease both; }
+
+  /* ── MATCH THE MEANING ── */
+  .mtm-question { border: 1px solid var(--paper-mid); border-radius: var(--radius); overflow: hidden; margin-bottom: 10px; }
+  .mtm-sentence { font-family: 'Lora', serif; font-size: 1rem; color: var(--ink); padding: 0.9rem 1.2rem; background: #fff; border-bottom: 1px solid var(--paper-mid); line-height: 1.5; }
+  .mtm-options { display: flex; flex-direction: column; gap: 0; }
+  .mtm-option { font-size: 0.83rem; padding: 0.6rem 1.2rem; border-bottom: 1px solid var(--paper-mid); cursor: pointer; transition: all 0.15s; color: var(--ink-soft); display: flex; align-items: flex-start; gap: 8px; }
+  .mtm-option:last-child { border-bottom: none; }
+  .mtm-option:hover { background: var(--blue-light); color: var(--blue); }
+  .mtm-option .opt-letter { font-weight: 700; min-width: 18px; flex-shrink: 0; color: var(--ink-faint); font-size: 0.78rem; padding-top: 1px; }
+  .mtm-option.opt-correct { background: var(--green-light); color: var(--green); pointer-events: none; }
+  .mtm-option.opt-correct .opt-letter { color: var(--green); }
+  .mtm-option.opt-wrong   { background: var(--accent-light); color: var(--accent); pointer-events: none; }
+  .mtm-option.opt-wrong .opt-letter { color: var(--accent); }
+  .mtm-option.opt-reveal  { background: var(--green-light); color: var(--green); pointer-events: none; }
+  .mtm-option.opt-reveal .opt-letter { color: var(--green); }
+  .mtm-option.opt-disabled { pointer-events: none; opacity: 0.5; }
+
+  .mtm-explain {
+    display: none;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    padding: 0.75rem 1.2rem;
+    border-top: 1px solid var(--paper-mid);
+    animation: fadeUp 0.2s ease both;
+  }
+  .mtm-explain-correct {
+    display: block;
+    background: var(--green-light);
+    color: var(--green);
+    border-top-color: #8ecab8;
+  }
+  .mtm-explain-wrong {
+    display: block;
+    background: var(--blue-light);
+    color: var(--blue);
+    border-top-color: #b8d2ee;
+  }
+  .mtm-expl-icon {
+    font-weight: 700;
+    margin-right: 6px;
+  }
+  .mtm-correct-icon { color: var(--green); }
+  .mtm-wrong-icon   { color: var(--accent); }
+
+  /* ── FLOATING WORD BOX ── */
+  .floating-wordbox {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250,249,246,0.97);
+    border-top: 1px solid var(--paper-mid);
+    box-shadow: 0 -4px 24px rgba(26,26,46,0.10);
+    padding: 10px 16px 12px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .floating-wordbox.visible { display: block; }
+  .floating-wordbox-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 7px;
+  }
+  .floating-wordbox .word-box-grid {
+    margin-bottom: 0;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 520px) {
+    .container { padding: 1rem 1rem 3rem; }
+    .card { padding: 1.25rem 1.25rem; }
+    .tab-nav { grid-template-columns: repeat(3, 1fr); }
+    .tab-btn { font-size: 0.68rem; padding: 8px 3px; }
+    .triptych { grid-template-columns: 1fr; }
+    .site-header { padding: 1rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div>
+    <div class="logo">Prepositions of <span>Origin &amp; Source</span></div>
+    <div class="subtitle">from · of · out of · by · through · with · off</div>
+  </div>
+  <div class="level-pill">A2 – B1</div>
+</header>
+
+<div class="container">
+
+  <nav class="tab-nav">
+    <button class="tab-btn active"  onclick="show('reference')">Reference</button>
+    <button class="tab-btn"         onclick="show('fillin')">Fill in the Blank</button>
+    <button class="tab-btn"         onclick="show('chooseform')">Choose the Form</button>
+    <button class="tab-btn"         onclick="show('spottherror')">Spot the Error</button>
+    <button class="tab-btn"         onclick="show('matchmeaning')">Match the Meaning</button>
+  </nav>
+
+  <!-- ══════════════════════════ REFERENCE -->
+  <div id="reference">
+    <div class="card">
+      <div class="act-label">Reference</div>
+      <div class="q-text">Prepositions of Origin &amp; Source — Grammar Guide</div>
+      <div class="badges">
+        <span class="badge b-teal">Read before practising</span>
+        <span class="badge b-blue">EN + 日本語</span>
+      </div>
+
+      <!-- FROM triptych -->
+      <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;">The "from" triptych — three different meanings</div>
+      <div class="triptych" style="margin-bottom:1.25rem">
+        <div class="trip-card tc-a">
+          <div class="trip-label">Identity / Origin</div>
+          <div class="trip-en">She <u>is from</u> Canada.</div>
+          <div class="trip-ja">彼女はカナダ出身です。（変わらない事実）</div>
+        </div>
+        <div class="trip-card tc-b">
+          <div class="trip-label">Habitual / General</div>
+          <div class="trip-en">She <u>comes from</u> Canada.</div>
+          <div class="trip-ja">彼女はカナダ出身です。（一般的な習慣）</div>
+        </div>
+        <div class="trip-card tc-c">
+          <div class="trip-label">Completed Movement</div>
+          <div class="trip-en">She <u>came from</u> Canada.</div>
+          <div class="trip-ja">彼女はカナダから来ました。（過去の移動）</div>
+        </div>
+      </div>
+
+      <div class="ref-grid">
+
+        <div class="ref-entry">
+          <div class="ref-prep">from <span class="ref-tag">origin · source · starting point</span></div>
+          <div class="ref-body">
+            <div class="ref-row"><span class="ref-en">I heard it from a friend.</span><span class="ref-ja">友人から聞きました。（情報の出所）</span></div>
+            <div class="ref-row"><span class="ref-en">Water drips from the tap.</span><span class="ref-ja">蛇口から水が滴ります。（物理的な出所）</span></div>
+            <div class="ref-row"><span class="ref-en">He suffers from back pain.</span><span class="ref-ja">彼は腰痛に苦しんでいます。（原因）</span></div>
+            <div class="ref-row"><span class="ref-en">Prices start from ¥500.</span><span class="ref-ja">価格は500円からです。（範囲の起点）</span></div>
+            <div class="ref-note">⚠ "from" alone = source/origin. Add a verb to change the meaning: <em>is from</em> (identity) · <em>comes from</em> (habit) · <em>came from</em> (past movement)</div>
+          </div>
+        </div>
+
+        <div class="ref-entry">
+          <div class="ref-prep">of <span class="ref-tag">belonging · composition · identity</span></div>
+          <div class="ref-body">
+            <div class="ref-row"><span class="ref-en">A friend <u>of</u> mine.</span><span class="ref-ja">私の友人。（所属）</span></div>
+            <div class="ref-row"><span class="ref-en">The city <u>of</u> Kyoto.</span><span class="ref-ja">京都市。（同格・識別）</span></div>
+            <div class="ref-row"><span class="ref-en">Made <u>of</u> wood.</span><span class="ref-ja">木製。（素材が変化しない）</span></div>
+            <div class="ref-row"><span class="ref-en">The smell <u>of</u> coffee.</span><span class="ref-ja">コーヒーの香り。（性質・内容）</span></div>
+            <div class="ref-note">⚠ "of" vs "out of" for materials: <em>made of wood</em> = wood is still wood. <em>made out of bottles</em> = bottles were transformed into something new.</div>
+          </div>
+        </div>
+
+        <div class="ref-entry">
+          <div class="ref-prep">out of <span class="ref-tag">emergence · transformation · motivation</span></div>
+          <div class="ref-body">
+            <div class="ref-row"><span class="ref-en">Water came <u>out of</u> the pipe.</span><span class="ref-ja">水が管から出てきました。（物理的な出現）</span></div>
+            <div class="ref-row"><span class="ref-en">Made <u>out of</u> recycled plastic.</span><span class="ref-ja">再生プラスチックから作られた。（変換・変化）</span></div>
+            <div class="ref-row"><span class="ref-en">She did it <u>out of</u> kindness.</span><span class="ref-ja">彼女は親切心からそれをしました。（動機）</span></div>
+            <div class="ref-row"><span class="ref-en">He acted <u>out of</u> fear.</span><span class="ref-ja">彼は恐怖心からそう行動しました。（感情的動機）</span></div>
+          </div>
+        </div>
+
+        <div class="ref-entry">
+          <div class="ref-prep">by <span class="ref-tag">creator · author · agent</span></div>
+          <div class="ref-body">
+            <div class="ref-row"><span class="ref-en">A novel <u>by</u> Murakami.</span><span class="ref-ja">村上春樹による小説。（作者）</span></div>
+            <div class="ref-row"><span class="ref-en">Painted <u>by</u> Picasso.</span><span class="ref-ja">ピカソによって描かれた。（製作者）</span></div>
+            <div class="ref-row"><span class="ref-en">A song <u>by</u> The Beatles.</span><span class="ref-ja">ビートルズの曲。（制作者）</span></div>
+            <div class="ref-note">⚠ "by" identifies <em>who made</em> something. "from" identifies <em>where</em> you got it: <em>a book by Hemingway</em> (author) vs <em>a book from the library</em> (source/location).</div>
+          </div>
+        </div>
+
+        <div class="ref-entry">
+          <div class="ref-prep">through <span class="ref-tag">channel · process · means</span></div>
+          <div class="ref-body">
+            <div class="ref-row"><span class="ref-en">I learned it <u>through</u> experience.</span><span class="ref-ja">経験を通じて学びました。（過程・手段）</span></div>
+            <div class="ref-row"><span class="ref-en">We met <u>through</u> a mutual friend.</span><span class="ref-ja">共通の友人を通じて知り合いました。</span></div>
+            <div class="ref-row"><span class="ref-en">She got the job <u>through</u> connections.</span><span class="ref-ja">コネを通じて仕事を得ました。（経路）</span></div>
+            <div class="ref-note">⚠ "through" = the channel or process. "from" = the direct source: <em>I heard it from her</em> (she told me directly) vs <em>I heard it through her</em> (via her network).</div>
+          </div>
+        </div>
+
+        <div class="ref-entry">
+          <div class="ref-prep">with <span class="ref-tag">ingredient · material among others</span></div>
+          <div class="ref-body">
+            <div class="ref-row"><span class="ref-en">Made <u>with</u> fresh cream.</span><span class="ref-ja">生クリームを使って作られた。（材料の一つ）</span></div>
+            <div class="ref-row"><span class="ref-en">Built <u>with</u> local stone.</span><span class="ref-ja">地元の石で建てられた。（使用素材）</span></div>
+            <div class="ref-note">⚠ "with" = one ingredient among several (recipe context). "of" = the primary/only material: <em>made of stone</em> (stone is the main material) vs <em>made with stone</em> (stone was used, among other things).</div>
+          </div>
+        </div>
+
+        <div class="ref-entry">
+          <div class="ref-prep">off <span class="ref-tag">informal source · living from</span></div>
+          <div class="ref-body">
+            <div class="ref-row"><span class="ref-en">She lives <u>off</u> her savings.</span><span class="ref-ja">彼女は貯金で生活しています。（生活の糧）</span></div>
+            <div class="ref-row"><span class="ref-en">He ate <u>off</u> the land.</span><span class="ref-ja">彼は自給自足で食べていました。（土地から）</span></div>
+            <div class="ref-row"><span class="ref-en">I took it <u>off</u> the shelf.</span><span class="ref-ja">棚から取りました。（物理的な出所）</span></div>
+            <div class="ref-note">"off" = informal/spoken. Often interchangeable with "from" in casual speech, but "off" emphasises the physical surface or informal resource.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════ FILL IN THE BLANK -->
+  <div id="fillin" style="display:none">
+    <div class="card">
+      <div class="act-label">Fill in the Blank</div>
+      <div class="q-text">Click a preposition, then click a blank. Each answer is checked immediately.</div>
+      <div class="badges">
+        <span class="badge b-accent">from</span>
+        <span class="badge b-teal">of</span>
+        <span class="badge b-blue">out of</span>
+        <span class="badge b-violet">by</span>
+        <span class="badge b-amber">through</span>
+        <span class="badge b-green">with</span>
+        <span class="badge" style="background:#f0e8f8;color:#6a3a8a">off</span>
+      </div>
+      <div class="word-box-grid" id="fi-wordbox" style="display:none"></div>
+      <div id="fi-sentences"></div>
+    </div>
+    <div class="hint-box"><b>Teacher tip:</b> After completing a section, ask the student to cover the preposition column and explain the meaning of each sentence in Japanese from memory. Pay particular attention to questions using <em>from</em> — ask whether the sentence describes identity, habit, or a completed action.</div>
+  </div>
+
+  <!-- ══════════════════════════ CHOOSE THE FORM -->
+  <div id="chooseform" style="display:none">
+    <div class="card">
+      <div class="act-label">Choose the Form</div>
+      <div class="q-text">Read the Japanese meaning. Choose the English form that matches it exactly.</div>
+      <div class="badges">
+        <span class="badge b-blue">is from / comes from / came from</span>
+        <span class="badge b-teal">of vs out of</span>
+        <span class="badge b-amber">by vs from vs through</span>
+      </div>
+      <div id="ctf-list"></div>
+    </div>
+    <div class="hint-box"><b>Teacher tip:</b> For any "from" triptych question the student gets wrong, ask them to say all three versions aloud and explain the difference before moving on. The goal is to feel the difference, not just remember a rule.</div>
+  </div>
+
+  <!-- ══════════════════════════ SPOT THE ERROR -->
+  <div id="spottherror" style="display:none">
+    <div class="card">
+      <div class="act-label">Spot the Error</div>
+      <div class="q-text">Each sentence has one wrong preposition or wrong verb form. Click the incorrect word.</div>
+      <div class="badges">
+        <span class="badge b-accent">One error per sentence</span>
+        <span class="badge b-amber">Click to identify it</span>
+      </div>
+      <div id="err-list"></div>
+    </div>
+    <div class="hint-box"><b>Teacher tip:</b> After each answer, ask <em>"What does the correct sentence mean in Japanese?"</em> This forces active retrieval of meaning rather than just pattern-matching.</div>
+  </div>
+
+  <!-- ══════════════════════════ MATCH THE MEANING -->
+  <div id="matchmeaning" style="display:none">
+    <div class="card">
+      <div class="act-label">Match the Meaning</div>
+      <div class="q-text">Read the English sentence. Choose the Japanese meaning that matches it most precisely.</div>
+      <div class="badges">
+        <span class="badge b-violet">Careful — similar options!</span>
+        <span class="badge b-blue">Focus on nuance</span>
+      </div>
+      <div id="mtm-list"></div>
+    </div>
+    <div class="hint-box"><b>Teacher tip:</b> This activity tests comprehension rather than production. If the student chooses the wrong option, read both the correct and incorrect Japanese translations aloud together and discuss the difference.</div>
+  </div>
+
+</div>
+
+<!-- ── FLOATING PANEL (fill-in only) ── -->
+<div class="floating-wordbox" id="floating-wordbox">
+  <div style="max-width:720px;margin:0 auto">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:7px;flex-wrap:wrap;gap:6px">
+      <div class="floating-wordbox-label" style="margin-bottom:0">Word box — click a word, then click a blank</div>
+      <div style="font-size:0.82rem;color:var(--ink-soft)">
+        <span class="s-correct" id="fi-correct-f" style="font-weight:700;color:var(--green)">0</span> correct &nbsp;·&nbsp;
+        <span class="s-wrong"   id="fi-wrong-f"   style="font-weight:700;color:var(--accent)">0</span> wrong &nbsp;·&nbsp;
+        <span id="fi-remaining-f" style="color:var(--ink-faint)">0</span> remaining
+        &nbsp;&nbsp;<button class="btn-secondary" onclick="resetFillin()" style="padding:4px 14px;font-size:0.78rem">↺ Reset</button>
+      </div>
+    </div>
+    <div class="word-box-grid" id="fi-wordbox-float"></div>
+  </div>
+</div>
+
+<!-- ── FLOATING SCORE BAR (choose the form) ── -->
+<div class="floating-wordbox" id="floating-ctf">
+  <div style="max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+    <div class="floating-wordbox-label" style="margin-bottom:0">Choose the Form</div>
+    <div style="font-size:0.82rem;color:var(--ink-soft);display:flex;align-items:center;gap:12px">
+      Score &nbsp;<strong id="ctf-score-f" style="color:var(--green)">0</strong>&thinsp;/&thinsp;<strong id="ctf-total-f">0</strong>
+      <button class="btn-primary" onclick="loadCtf()" style="padding:5px 16px;font-size:0.78rem">New set →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── FLOATING SCORE BAR (spot the error) ── -->
+<div class="floating-wordbox" id="floating-err">
+  <div style="max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+    <div class="floating-wordbox-label" style="margin-bottom:0">Spot the Error</div>
+    <div style="font-size:0.82rem;color:var(--ink-soft);display:flex;align-items:center;gap:12px">
+      Score &nbsp;<strong id="err-score-f" style="color:var(--green)">0</strong>&thinsp;/&thinsp;<strong id="err-total-f">0</strong>
+      <button class="btn-primary" onclick="loadErrors()" style="padding:5px 16px;font-size:0.78rem">New set →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── FLOATING SCORE BAR (match the meaning) ── -->
+<div class="floating-wordbox" id="floating-mtm">
+  <div style="max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+    <div class="floating-wordbox-label" style="margin-bottom:0">Match the Meaning</div>
+    <div style="font-size:0.82rem;color:var(--ink-soft);display:flex;align-items:center;gap:12px">
+      Score &nbsp;<strong id="mtm-score-f" style="color:var(--green)">0</strong>&thinsp;/&thinsp;<strong id="mtm-total-f">0</strong>
+      <button class="btn-primary" onclick="loadMtm()" style="padding:5px 16px;font-size:0.78rem">New set →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────── HELPERS
+function show(id) {
+  ['reference','fillin','chooseform','spottherror','matchmeaning'].forEach(function(s) {
+    document.getElementById(s).style.display = s === id ? '' : 'none';
+  });
+  document.querySelectorAll('.tab-btn').forEach(function(b, i) {
+    b.classList.toggle('active', ['reference','fillin','chooseform','spottherror','matchmeaning'][i] === id);
+  });
+  var fwb  = document.getElementById('floating-wordbox');
+  var fctf = document.getElementById('floating-ctf');
+  var ferr = document.getElementById('floating-err');
+  var fmtm = document.getElementById('floating-mtm');
+  fwb.classList.remove('visible');
+  fctf.classList.remove('visible');
+  ferr.classList.remove('visible');
+  fmtm.classList.remove('visible');
+  document.getElementById('fillin').style.paddingBottom = '';
+  document.getElementById('chooseform').style.paddingBottom = '';
+  document.getElementById('spottherror').style.paddingBottom = '';
+  document.getElementById('matchmeaning').style.paddingBottom = '';
+  if (id === 'fillin') {
+    fwb.classList.add('visible');
+    document.getElementById('fillin').style.paddingBottom = '130px';
+  } else if (id === 'chooseform') {
+    fctf.classList.add('visible');
+    document.getElementById('chooseform').style.paddingBottom = '80px';
+  } else if (id === 'spottherror') {
+    ferr.classList.add('visible');
+    document.getElementById('spottherror').style.paddingBottom = '80px';
+  } else if (id === 'matchmeaning') {
+    fmtm.classList.add('visible');
+    document.getElementById('matchmeaning').style.paddingBottom = '80px';
+  }
+}
+function shuffle(arr) {
+  var a = arr.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function escA(s) { return String(s).replace(/"/g,'&quot;'); }
+
+// ─────────────────────────────── FILL IN THE BLANK
+// Each sentence has exactly one natural answer from the word box.
+// "from" appears 5 times (covering: identity, information source, physical source, cause, range)
+// to reinforce its varied uses without ambiguity.
+
+var fiWords = ['from','of','out of','by','through','with','off'];
+
+var fiSentences = [
+  // FROM — identity/origin (is from)
+  { text: 'My new colleague ___ Osaka is very friendly.',         answer: ['from'],        textJa: '大阪出身の新しい同僚はとても親しみやすいです。',                   explain: '"From" identifies origin or background. "My colleague from Osaka" = she is Osaka-born. No other word in the box fits here.',                                                                                                                                              explainJa: '「from」は出身・背景を表します。「from Osaka」＝大阪出身という変わらない事実です。' },
+  // FROM/THROUGH — information source
+  { text: 'I heard about the job opening ___ a colleague.',      answer: ['from','through'], textJa: '同僚から求人情報を聞きました。',                                       explain: '"From" and "through" are both correct here. "From" is the natural choice when the colleague told you directly. "Through" is equally valid if the colleague was an intermediary — they passed the information along rather than being the original source.',                  explainJa: '「from」も「through」もここでは正解です。同僚が直接教えてくれた場合は「from」が自然です。同僚が情報を伝えた仲介者だった場合は「through」も同様に正しいです。' },
+  // FROM / OUT OF — physical source
+  { text: 'The spring water flows ___ the mountain.',             answer: ['from','out of'], textJa: '湧き水が山から流れています。',                                         explain: '"From" and "out of" are both natural here. "From" marks the mountain as the origin or starting point. "Out of" is equally correct and adds the sense of the water emerging from inside the mountain. Both are used in everyday English.',                                     explainJa: '「from」も「out of」もここでは自然です。「from」は山を出発点として示します。「out of」も同様に正しく、水が山の内側から湧き出るニュアンスが加わります。どちらも日常英語で使われます。' },
+  // FROM — cause/suffering
+  { text: 'She has been recovering ___ a knee injury.',           answer: ['from'],        textJa: '彼女は膝の怪我から回復中です。',                                       explain: '"Recover from" is a fixed phrase — no other preposition in the box fits this construction.',                                                                                                                                                                                  explainJa: '「recover from」は決まった表現です。このかたちでは他の前置詞は使えません。' },
+  // FROM / OF — range
+  { text: 'The course is open to students ___ all backgrounds.',  answer: ['from','of'],   textJa: 'このコースはあらゆる背景を持つ学生に開かれています。',               explain: 'Both "from" and "of" are correct and natural here. "Students from all backgrounds" emphasises the range of origins — where people come from. "Students of all backgrounds" emphasises the variety of backgrounds as a characteristic. Both are common set phrases in everyday English.',  explainJa: '「from」も「of」もここでは正しく自然です。「students from all backgrounds」は出身の範囲を強調します。「students of all backgrounds」は多様な背景を特性として強調します。どちらも日常英語でよく使われる表現です。' },
+  // OF — belonging
+  { text: 'She is a graduate ___ Kyoto University.',              answer: ['of'],          textJa: '彼女は京都大学の卒業生です。',                                         explain: '"A graduate of" is a fixed phrase — "of" shows institutional belonging. No other word fits here.',                                                                                                                                                                          explainJa: '「a graduate of」は決まった表現です。「of」は所属・同一性を示します。' },
+  // OF / OUT OF / FROM — material
+  { text: 'The old bridge is made ___ stone.',                    answer: ['of','out of','from'], textJa: 'その古い橋は石でできています。',                                       explain: '"Made of", "made out of", and "made from" are all acceptable. "Made of" is most common for a clearly visible unchanged material. "Made from" treats stone as the source. "Made out of" is also widely used. All three are natural English.',                              explainJa: '「made of」「made out of」「made from」のいずれも正解です。「made of」は変化していない素材に最もよく使われます。「made from」は石を素材の出所として示します。「made out of」も広く使われます。三つとも自然な英語です。' },
+  // OF — characteristic/content
+  { text: 'There was a strong smell ___ paint in the room.',      answer: ['of'],          textJa: '部屋の中にペンキの強い臭いがしました。',                               explain: '"The smell of" is the standard fixed phrase for characteristic odour. "From" is not natural here — we say "the smell of paint", not "the smell from paint".',                                                                                                              explainJa: '「the smell of」は特性的な臭いを表す標準的な決まった表現です。「from」はここでは自然ではありません。「the smell of paint」と言い、「the smell from paint」とは言いません。' },
+  // OUT OF / FROM — physical extraction
+  { text: 'She pulled the cork ___ the bottle.',                  answer: ['out of','from'], textJa: '彼女はボトルからコルクを引き抜きました。',                             explain: 'Both "out of" and "from" are natural here. "Out of" emphasises extraction from inside the container. "From" is equally correct and common — "pulled the cork from the bottle" is standard English.',                                                                       explainJa: '「out of」も「from」もここでは自然です。「out of」は容器の内側からの取り出しを強調します。「from」も同様に正しく一般的です。「pulled the cork from the bottle」は標準的な英語表現です。' },
+  // OUT OF — motivation
+  { text: 'He donated the money ___ a sense of duty.',            answer: ['out of'],      textJa: '彼は義務感からお金を寄付しました。',                                   explain: '"Out of" is the correct phrase for emotional motivation — "out of duty", "out of kindness", "out of fear" are all fixed expressions. "From" is not used this way in standard English.',                                                                                     explainJa: '「out of」は感情的な動機を表す正しい表現です。「out of duty」「out of kindness」「out of fear」はすべて決まった表現です。「from」はこのように使いません。' },
+  // OUT OF / FROM — transformation (accepting both)
+  { text: 'The artist made the sculpture ___ driftwood.',         answer: ['out of','from'],textJa: 'その芸術家は流木から彫刻を作りました。',                              explain: 'Both "out of" and "from" are natural here. "Made out of" emphasises transformation — driftwood became sculpture. "Made from" is equally correct and common, focusing on the source material. Either is a good answer.',                                                    explainJa: '「out of」も「from」もここでは自然です。「made out of」は変換（流木が彫刻になった）を強調します。「made from」も同様に正しく一般的で、素材の出所に焦点を当てます。どちらも正解です。' },
+  // BY — creator
+  { text: 'Have you read that short story ___ Akutagawa?',        answer: ['by'],          textJa: '芥川の短編小説を読みましたか？',                                       explain: '"By" identifies the creator or author. No other word in the box fits this use.',                                                                                                                                                                                          explainJa: '「by」は創作者・作者を示します。この使い方では他の前置詞は使えません。' },
+  // BY — agent (passive)
+  { text: 'The new policy was drafted ___ a government committee.',answer: ['by'],          textJa: 'その新しい政策は政府委員会によって起草されました。',                   explain: '"By" in passive sentences identifies the agent — who performed the action. This is a fixed grammatical rule.',                                                                                                                                                              explainJa: '受動態では「by」が動作者を示します。これは固定した文法規則です。' },
+  // THROUGH / FROM / WITH — channel/means
+  { text: 'She improved her pronunciation ___ daily listening practice.', answer: ['through','from','with'], textJa: '彼女は毎日のリスニング練習を通じて発音を上達させました。', explain: '"Through", "from", and "with" are all acceptable. "Through" emphasises the ongoing process. "From" treats practice as the source of improvement. "With" treats practice as the tool or means used. All three are natural, with "through" being the most common in this context.', explainJa: '「through」「from」「with」のいずれも正解です。「through」は継続的な過程を強調します。「from」は練習を上達の出所として示します。「with」は練習を使った手段として示します。三つとも自然ですが、「through」がこの文脈では最も一般的です。' },
+  // THROUGH / FROM — indirect channel
+  { text: 'I got my current job ___ a recommendation on LinkedIn.', answer: ['through','from'], textJa: '私はLinkedInの推薦を通じて現在の仕事を得ました。',                   explain: 'Both "through" and "from" are natural. "Through" emphasises LinkedIn as the indirect channel or medium. "From" treats the recommendation as the direct source. Both are commonly used in this context.',                                                                     explainJa: '「through」も「from」もここでは自然です。「through」はLinkedInを間接的な経路・媒体として強調します。「from」は推薦を直接の出所として示します。どちらもよく使われます。' },
+  // WITH — ingredient (multiple items, clearly recipe)
+  { text: 'The sauce is made ___ garlic, olive oil, and lemon.',  answer: ['with'],        textJa: 'そのソースはニンニク・オリーブオイル・レモンで作られています。',       explain: '"Made with" lists multiple ingredients in a recipe. "Of" would suggest the sauce IS garlic (one material). "Out of" would imply transformation. "With" is the natural choice for a list of ingredients.',                                                                  explainJa: '「made with」はレシピで複数の材料を列挙します。「of」だとソースがニンニクそのものであるかのようになります。「out of」は変換を意味します。材料のリストには「with」が自然です。' },
+  // WITH — building material among others
+  { text: 'The house was renovated ___ reclaimed timber.',        answer: ['with'],        textJa: 'その家は再生木材を使ってリノベーションされました。',                   explain: '"With" shows the material used in the renovation — one element of the work. "From" would sound odd here. "Out of" would imply the whole house was transformed from timber, which changes the meaning.',                                                                    explainJa: '「with」はリノベーションに使われた素材を示します。「from」はここでは不自然です。「out of」だと家全体が木材から変換されたことになり、意味が変わります。' },
+  // OFF — financial source
+  { text: 'After leaving his job, he lived ___ his savings for six months.', answer: ['off'], textJa: '仕事を辞めた後、彼は6か月間貯金で生活しました。',               explain: '"Live off" is the fixed natural phrase for financial sustenance. "From" is not standard in this expression in British or American English.',                                                                                                                                 explainJa: '「live off」は生計の資金源を表す自然な決まった表現です。「from」はイギリス英語・アメリカ英語ではこの表現では標準的ではありません。' },
+];
+
+var fiSelected = null;
+
+function buildFillin() {
+  // Build both the inline word box (hidden, kept for reset logic) and the floating one
+  var wb = document.getElementById('fi-wordbox');
+  wb.innerHTML = '';
+  var wbf = document.getElementById('fi-wordbox-float');
+  wbf.innerHTML = '';
+
+  fiWords.forEach(function(w) {
+    // Inline chip (hidden — floating one is the visible version)
+    var chip = document.createElement('span');
+    chip.className = 'word-chip';
+    chip.textContent = w;
+    chip.id = 'fchip-' + w.replace(/\s/g,'_');
+    chip.onclick = function() { selectFiChip(w); };
+    wb.appendChild(chip);
+
+    // Floating chip — mirrors state of inline chip
+    var chipF = document.createElement('span');
+    chipF.className = 'word-chip';
+    chipF.textContent = w;
+    chipF.id = 'fchipf-' + w.replace(/\s/g,'_');
+    chipF.onclick = function() { selectFiChip(w); };
+    wbf.appendChild(chipF);
+  });
+
+  var sl = document.getElementById('fi-sentences');
+  sl.innerHTML = '';
+  fiSentences.forEach(function(s, i) {
+    var wrap = document.createElement('div');
+    wrap.className = 'sentence-item-wrap';
+
+    var item = document.createElement('div');
+    item.className = 'sentence-item';
+
+    var num = document.createElement('span');
+    num.className = 'sentence-num';
+    num.textContent = (i + 1) + '.';
+
+    var textEl = document.createElement('span');
+    textEl.className = 'sentence-text';
+    var parts = s.text.split('___');
+    textEl.innerHTML = esc(parts[0]) +
+      '<span class="blank-slot" id="fslot-' + i + '" data-answer="' + escA(s.answer) + '" onclick="fillSlot(this)">&thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&thinsp;</span>' +
+      esc(parts[1]);
+
+    var status = document.createElement('span');
+    status.className = 'sentence-status';
+    status.id = 'fstatus-' + i;
+
+    var jaHint = document.createElement('div');
+    jaHint.className = 'sentence-ja-hint';
+    jaHint.textContent = s.textJa;
+
+    var expl = document.createElement('div');
+    expl.className = 'sentence-explain';
+    expl.id = 'fexpl-' + i;
+
+    item.appendChild(num);
+    item.appendChild(textEl);
+    item.appendChild(status);
+    wrap.appendChild(item);
+    wrap.appendChild(jaHint);
+    wrap.appendChild(expl);
+    sl.appendChild(wrap);
+  });
+  updateFillinScore();
+}
+
+function selectFiChip(word) {
+  // Deselect all chips in both boxes
+  document.querySelectorAll('.word-chip').forEach(function(c) { c.classList.remove('selected-chip'); });
+  if (fiSelected === word) { fiSelected = null; return; }
+  fiSelected = word;
+  // Select matching chip in both boxes
+  var key = word.replace(/\s/g,'_');
+  var c1 = document.getElementById('fchip-'  + key);
+  var c2 = document.getElementById('fchipf-' + key);
+  if (c1) c1.classList.add('selected-chip');
+  if (c2) c2.classList.add('selected-chip');
+}
+
+function fillSlot(slot) {
+  if (!fiSelected) return;
+  if (slot.classList.contains('correct')) return;
+  var word = fiSelected;
+  var idx = slot.id.replace('fslot-','');
+  var sentData = fiSentences[parseInt(idx)];
+  var answers = Array.isArray(sentData.answer) ? sentData.answer : [sentData.answer];
+  var isCorrect = answers.indexOf(word) !== -1;
+
+  slot.textContent = word;
+  slot.classList.remove('wrong','correct');
+
+  var statusEl = document.getElementById('fstatus-' + idx);
+  var explEl   = document.getElementById('fexpl-'   + idx);
+
+  if (isCorrect) {
+    slot.classList.add('correct');
+    if (statusEl) { statusEl.className = 'sentence-status s-correct'; statusEl.textContent = '✓'; }
+    if (explEl) {
+      explEl.innerHTML = '<span class="correct-word">' + esc(word) + '</span> — ' + esc(sentData.explain) + '<div class="explain-ja">' + esc(sentData.explainJa) + '</div>';
+      explEl.className = 'sentence-explain show-correct';
+    }
+  } else {
+    slot.classList.add('wrong');
+    if (statusEl) { statusEl.className = 'sentence-status s-wrong'; statusEl.textContent = '✗'; }
+    if (explEl) {
+      var answerDisplay = answers.length > 1 ? answers.join('" or "') : answers[0];
+      explEl.innerHTML = 'Correct answer: <span class="correct-word">"' + esc(answerDisplay) + '"</span> — ' + esc(sentData.explain) + '<div class="explain-ja">' + esc(sentData.explainJa) + '</div>';
+      explEl.className = 'sentence-explain show-wrong';
+    }
+  }
+  document.querySelectorAll('.word-chip').forEach(function(c) { c.classList.remove('selected-chip'); });
+  fiSelected = null;
+  updateFillinScore();
+}
+
+function updateFillinScore() {
+  var correct = 0, wrong = 0, remaining = 0;
+  document.querySelectorAll('.blank-slot').forEach(function(s) {
+    if (s.classList.contains('correct'))    correct++;
+    else if (s.classList.contains('wrong')) wrong++;
+    else remaining++;
+  });
+  document.getElementById('fi-correct-f').textContent   = correct;
+  document.getElementById('fi-wrong-f').textContent     = wrong;
+  document.getElementById('fi-remaining-f').textContent = remaining;
+}
+
+function resetFillin() {
+  document.querySelectorAll('.blank-slot').forEach(function(slot, i) {
+    slot.innerHTML = '&thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&thinsp;';
+    slot.classList.remove('correct','wrong');
+    var idx = slot.id.replace('fslot-','');
+    var s = document.getElementById('fstatus-' + idx);
+    var e = document.getElementById('fexpl-'   + idx);
+    if (s) { s.className = 'sentence-status'; s.textContent = ''; }
+    if (e) { e.className = 'sentence-explain'; e.innerHTML = ''; }
+  });
+  document.querySelectorAll('.word-chip').forEach(function(c) { c.classList.remove('selected-chip'); });
+  fiSelected = null;
+  updateFillinScore();
+}
+
+// ─────────────────────────────── CHOOSE THE FORM
+// Focuses heavily on the from-triptych and of/out of material distinction,
+// plus by/from/through for source-of-work and source-of-information.
+
+var ctfAll = [
+  // ── FROM TRIPTYCH
+  {
+    prompt: '___', ja: '彼女はカナダ出身です。（変わらない事実・アイデンティティ）',
+    options: ['She is from Canada.', 'She comes from Canada.', 'She came from Canada.'],
+    answer: ['She is from Canada.', 'She comes from Canada.'],
+    explain: '"She is from Canada" and "She comes from Canada" are both natural ways to state permanent origin or identity. "Is from" is slightly more static and definitive; "comes from" has a slightly habitual nuance — but in everyday use they mean the same thing. "She came from Canada" is different: it describes a specific past trip.',
+    explainJa: '「She is from Canada」と「She comes from Canada」はどちらも出身地・アイデンティティを表す自然な表現です。「is from」はやや静的で確定的、「comes from」はやや習慣的なニュアンスがありますが、日常的にはほぼ同じ意味です。「She came from Canada」だけが異なり、特定の過去の移動を表します。'
+  },
+  {
+    prompt: '___', ja: '彼女はカナダ出身です。（一般的な習慣・よく使う表現）',
+    options: ['She is from Canada.', 'She comes from Canada.', 'She came from Canada.'],
+    answer: ['She is from Canada.', 'She comes from Canada.'],
+    explain: '"She is from Canada" and "She comes from Canada" are both correct and interchangeable for expressing origin or nationality. The distinction between them is extremely subtle in practice — both describe a permanent fact about where she is from. Only "She came from Canada" is different, as it describes a specific completed past journey.',
+    explainJa: '「She is from Canada」と「She comes from Canada」はどちらも出身・国籍を表すのに正しく、互換的です。実際の使い方での違いは非常に微妙で、どちらも彼女の出身地という変わらない事実を表します。「She came from Canada」だけが異なり、特定の過去の移動を表します。'
+  },
+  {
+    prompt: '___', ja: '彼女はカナダから来ました。（過去の移動・先週など）',
+    options: ['She is from Canada.', 'She comes from Canada.', 'She came from Canada.'],
+    answer: 'She came from Canada.',
+    explain: '"Came from" = completed past movement. She travelled from Canada and arrived here at a specific point in the past.',
+    explainJa: '「came from」＝完了した過去の移動。カナダから移動し、特定の過去の時点にここに到着しました。'
+  },
+  {
+    prompt: '___', ja: '彼はどこの出身ですか？（アイデンティティ・出身地を尋ねている）',
+    options: ['Where is he from?', 'Where does he come from?', 'Where did he come from?'],
+    answer: ['Where is he from?', 'Where does he come from?'],
+    explain: 'Both "Where is he from?" and "Where does he come from?" ask about permanent identity or nationality — they are interchangeable here. Only "Where did he come from?" is different: it asks about a specific completed trip.',
+    explainJa: '「Where is he from?」と「Where does he come from?」はどちらも出身地・国籍を尋ねており、この文脈では互換的です。「Where did he come from?」だけが異なり、特定の過去の移動について尋ねています。'
+  },
+  {
+    prompt: '___', ja: '彼はどこから来たのですか？（今日・たった今など、過去の移動）',
+    options: ['Where is he from?', 'Where does he come from?', 'Where did he come from?'],
+    answer: 'Where did he come from?',
+    explain: '"Where did he come from?" = asking about a specific past trip or movement, not identity.',
+    explainJa: '「Where did he come from?」＝特定の過去の移動について尋ねています。アイデンティティではありません。'
+  },
+  {
+    prompt: '___', ja: 'この机は木製です。（素材は変化していない・最も一般的な表現）',
+    options: ['This desk is made of wood.', 'This desk is made out of wood.', 'This desk is made with wood.'],
+    answer: ['This desk is made of wood.', 'This desk is made out of wood.'],
+    explain: 'Both "made of" and "made out of" are acceptable for an unchanged material. "Made of" is the most common and is slightly more natural for simple, visible materials like wood. "Made out of" is also correct. "Made with" would imply wood is one ingredient among several.',
+    explainJa: '「made of」も「made out of」も変化していない素材には使えます。「made of」の方がより一般的で、木のような単純な素材には自然です。「made out of」も正しいです。「made with」は木材が複数の材料の一つであることを意味します。'
+  },
+  {
+    prompt: '___', ja: 'このバッグは古い旗から作られています。（素材が変換された）',
+    options: ['This bag is made of old flags.', 'This bag is made out of old flags.', 'This bag is made with old flags.'],
+    answer: 'This bag is made out of old flags.',
+    explain: '"Made out of" = the material was transformed into something new. Old flags became a bag — the original form changed.',
+    explainJa: '「made out of」＝素材が新しいものに変換されました。古い旗がバッグになりました。'
+  },
+  {
+    prompt: '___', ja: 'このクッキーはバター・砂糖・小麦粉で作られています。（複数の材料）',
+    options: ['These cookies are made of butter, sugar, and flour.', 'These cookies are made out of butter, sugar, and flour.', 'These cookies are made with butter, sugar, and flour.'],
+    answer: 'These cookies are made with butter, sugar, and flour.',
+    explain: '"Made with" = a recipe using multiple ingredients. "With" lists what was used to create it, without implying the cookie looks like butter.',
+    explainJa: '「made with」＝複数の材料を使ったレシピ。「with」は作るために使ったものを列挙します。クッキーがバターのように見えるとは言っていません。'
+  },
+  // ── BY vs FROM vs THROUGH
+  {
+    prompt: '___', ja: 'その絵は有名な芸術家によって描かれました。（誰が作ったか）',
+    options: ['The painting is by a famous artist.', 'The painting is from a famous artist.', 'The painting is through a famous artist.'],
+    answer: 'The painting is by a famous artist.',
+    explain: '"By" identifies the creator. "From" would suggest you received it from that person (a gift, not a creation fact).',
+    explainJa: '「by」は制作者を特定します。「from」だと、その人物から受け取ったこと（贈り物）を意味します。'
+  },
+  {
+    prompt: '___', ja: '彼女は有名な芸術家から絵をもらいました。（出所・受け取り）',
+    options: ['She got the painting by a famous artist.', 'She got the painting from a famous artist.', 'She got the painting through a famous artist.'],
+    answer: 'She got the painting from a famous artist.',
+    explain: '"From" = the source from which she received something. The artist gave it to her directly.',
+    explainJa: '「from」＝受け取った出所。芸術家が直接渡してくれました。'
+  },
+  {
+    prompt: '___', ja: '私は共通の友人を通じてその仕事を紹介されました。（友人は直接の雇用主ではなく仲介者）',
+    options: ['I got the job by a mutual friend.', 'I got the job from a mutual friend.', 'I got the job through a mutual friend.'],
+    answer: ['I got the job through a mutual friend.', 'I got the job from a mutual friend.'],
+    explain: '"Through" is the clearest choice when the friend was an intermediary — they connected you, but weren\'t the employer. "From" is also natural if the friend directly recommended or passed on the opportunity to you. "By" is not used this way.',
+    explainJa: '「through」は友人が仲介者だった場合（直接雇用者ではなく繋いでくれた場合）に最も明確です。友人が直接機会を渡してくれた場合は「from」も自然です。「by」はこの使い方ではありません。'
+  },
+  // ── OUT OF motivation
+  {
+    prompt: '___', ja: '彼女は好奇心から英語を学び始めました。（動機）',
+    options: ['She started learning English from curiosity.', 'She started learning English out of curiosity.', 'She started learning English through curiosity.'],
+    answer: 'She started learning English out of curiosity.',
+    explain: '"Out of" expresses the emotional motivation behind a decision. "Out of curiosity" is a fixed phrase.',
+    explainJa: '「out of」は決断の背景にある感情的な動機を表します。「out of curiosity」は決まった表現です。'
+  },
+  // ── OFF
+  {
+    prompt: '___', ja: '彼女は投資で生計を立てています。（生活の資金源）',
+    options: ['She lives from her investments.', 'She lives off her investments.', 'She lives through her investments.'],
+    answer: 'She lives off her investments.',
+    explain: '"Live off" is a fixed phrase meaning to use something as your financial resource. "Off" emphasises drawing sustenance informally from a source.',
+    explainJa: '「live off」は何かを生活の資金源として使う、という決まった表現です。「off」は出所から非公式に生計を立てるニュアンスです。'
+  },
+];
+
+var ctfScore = 0, ctfAnswered = 0, ctfQueue = [];
+
+function loadCtf() {
+  ctfScore = 0; ctfAnswered = 0;
+  ctfQueue = shuffle(ctfAll).slice(0, 8);
+  document.getElementById('ctf-score-f').textContent = 0;
+  document.getElementById('ctf-total-f').textContent = 0;
+  var list = document.getElementById('ctf-list');
+  list.innerHTML = '';
+  ctfQueue.forEach(function(q, i) {
+    var block = document.createElement('div');
+    block.className = 'ctf-question';
+    block.id = 'ctfq-' + i;
+
+    var prompt = document.createElement('div');
+    prompt.className = 'ctf-prompt';
+    prompt.textContent = q.prompt === '___' ? 'Choose the correct sentence:' : q.prompt;
+
+    var ja = document.createElement('div');
+    ja.className = 'ctf-ja';
+    ja.textContent = q.ja;
+
+    var opts = document.createElement('div');
+    opts.className = 'ctf-options';
+    shuffle(q.options).forEach(function(opt) {
+      var btn = document.createElement('button');
+      btn.className = 'ctf-btn';
+      btn.textContent = opt;
+      btn.onclick = function() { answerCtf(i, opt, btn); };
+      opts.appendChild(btn);
+    });
+
+    var rev = document.createElement('div');
+    rev.className = 'ctf-reveal';
+    rev.id = 'ctfrev-' + i;
+
+    block.appendChild(prompt);
+    block.appendChild(ja);
+    block.appendChild(opts);
+    block.appendChild(rev);
+    list.appendChild(block);
+  });
+}
+
+function answerCtf(idx, chosen, btn) {
+  var q = ctfQueue[idx];
+  var block = document.getElementById('ctfq-' + idx);
+  block.querySelectorAll('.ctf-btn').forEach(function(b) { b.classList.add('disabled'); });
+  var rev = document.getElementById('ctfrev-' + idx);
+  ctfAnswered++;
+  var answers = Array.isArray(q.answer) ? q.answer : [q.answer];
+  var isCorrect = answers.indexOf(chosen) !== -1;
+  var jaLine = '<div class="explain-ja">' + esc(q.explainJa) + '</div>';
+  if (isCorrect) {
+    btn.classList.add('selected-correct');
+    // If multiple correct answers, highlight all of them
+    if (answers.length > 1) {
+      block.querySelectorAll('.ctf-btn').forEach(function(b) {
+        if (answers.indexOf(b.textContent) !== -1) b.classList.add('show-correct');
+      });
+    }
+    ctfScore++;
+    rev.innerHTML = '✓ ' + esc(q.explain) + jaLine;
+    rev.className = 'ctf-reveal show-correct';
+  } else {
+    btn.classList.add('selected-wrong');
+    block.querySelectorAll('.ctf-btn').forEach(function(b) {
+      if (answers.indexOf(b.textContent) !== -1) b.classList.add('show-correct');
+    });
+    rev.innerHTML = '✗ ' + esc(q.explain) + jaLine;
+    rev.className = 'ctf-reveal show-wrong';
+  }
+  document.getElementById('ctf-score-f').textContent = ctfScore;
+  document.getElementById('ctf-total-f').textContent = ctfAnswered;
+}
+
+// ─────────────────────────────── SPOT THE ERROR
+// Errors span: wrong preposition, wrong verb tense with "from",
+// of/out of confusion, by/from confusion, through/from confusion.
+
+var errorAll = [
+  {
+    before: 'She', wrong: 'came', after: 'from Brazil — she was born and raised there.',
+    correct: 'is',
+    correctSentenceJa: '彼女はブラジル出身です。そこで生まれ育ちました。',
+    explanation: 'The sentence says "born and raised there" — this is a permanent identity fact, so "is from" is correct. "Came from" would describe a single completed trip.',
+    explanationJa: '「生まれ育った」とあるので、これは変わらないアイデンティティの事実です。「is from」が正しい。「came from」は過去の一度の移動を表します。'
+  },
+  {
+    before: 'He', wrong: 'is', after: 'from Tokyo last week for the conference.',
+    correct: 'came',
+    correctSentenceJa: '彼は先週会議のために東京から来ました。',
+    explanation: '"Last week" shows a completed past trip, so "came from" is needed. "Is from" describes permanent origin, not a specific journey.',
+    explanationJa: '「先週」とあるので、完了した過去の移動を表す「came from」が必要です。「is from」は永続的な出身地を表します。'
+  },
+  {
+    before: 'This is a poem written', wrong: 'from', after: 'Basho in the 17th century.',
+    correct: 'by',
+    correctSentenceJa: 'これは17世紀に芭蕉によって書かれた詩です。',
+    explanation: '"By" identifies the creator in passive constructions. "Written by Basho" = Basho is the author. "From" would suggest you received it from him, not that he wrote it.',
+    explanationJa: '受動態では「by」が制作者を示します。「written by Basho」＝芭蕉が作者です。「from」だと彼から受け取ったことになり、彼が書いたことにはなりません。'
+  },
+  {
+    before: 'She donated the books', wrong: 'from', after: 'a desire to help.',
+    correct: 'out of',
+    correctSentenceJa: '彼女は助けたいという気持ちから本を寄付しました。',
+    explanation: '"Out of" expresses the emotional motivation behind an action. "Out of a desire to help" is the correct phrase.',
+    explanationJa: '「out of」は行動の背景にある感情的な動機を表します。「out of a desire to help」が正しい表現です。'
+  },
+  {
+    before: 'That short story was written', wrong: 'from', after: 'a local author.',
+    correct: 'by',
+    correctSentenceJa: 'その短編小説は地元の作家によって書かれました。',
+    explanation: '"By" identifies the creator or author in passive constructions. "From" would imply you received the story from that person.',
+    explanationJa: '受動態では「by」が制作者・作者を示します。「from」だとその人物から受け取ったことになります。'
+  },
+  {
+    before: 'I found out about the course', wrong: 'through', after: 'the teacher directly — she emailed me.',
+    correct: 'from',
+    correctSentenceJa: '先生から直接このコースについて聞きました。彼女がメールを送ってくれました。',
+    explanation: '"From" = direct source. The teacher told you personally. "Through" implies an indirect channel, but here it was direct contact.',
+    explanationJa: '「from」＝直接の出所。先生が個人的に伝えてくれました。「through」は間接的な経路を意味しますが、ここでは直接の連絡です。'
+  },
+  {
+    before: 'The shoes are made', wrong: 'of', after: 'recycled ocean plastic.',
+    correct: 'out of',
+    correctSentenceJa: 'その靴は海洋プラスチックから作られています。',
+    explanation: '"Made out of" = the material was transformed into something new. Plastic was transformed into shoes — use "out of".',
+    explanationJa: '「made out of」＝素材が新しいものに変換されました。プラスチックが靴になりました。「out of」を使います。'
+  },
+  {
+    before: 'She developed her leadership skills', wrong: 'from', after: 'years of managing volunteers.',
+    correct: 'through',
+    correctSentenceJa: '彼女は何年もボランティアを管理することを通じてリーダーシップスキルを磨きました。',
+    explanation: '"Through" is the preferred choice here because it emphasises years of managing as an ongoing process or channel. That said, "from" is also grammatically correct — "developed from years of experience" is natural English. The error here is marked as "from" because "through" is the stronger, more precise choice in this context.',
+    explanationJa: '「through」は何年もの管理を継続的な過程・経路として強調するため、ここでは好まれます。ただし「from」も文法的に正しく、"developed from years of experience"は自然な英語です。この問題では「through」がより強く正確な選択のため「from」を誤りとしていますが、実際には両方可能です。'
+  },
+  {
+    before: 'The whole family lives', wrong: 'from', after: 'the father\'s small pension.',
+    correct: 'off',
+    correctSentenceJa: '家族全員が父親の少ない年金で生活しています。',
+    explanation: '"Live off" is the correct fixed phrase for financial sustenance. "Live from" is not standard in this context.',
+    explanationJa: '「live off」が生計の資金源を表す正しい決まった表現です。「live from」はこの文脈では標準的ではありません。'
+  },
+  {
+    before: 'The smell', wrong: 'from', after: 'fresh coffee always wakes me up.',
+    correct: 'of',
+    correctSentenceJa: '新鮮なコーヒーの香りはいつも私を目覚めさせます。',
+    explanation: '"The smell of" is the standard fixed phrase for a characteristic scent. "From" is not wrong — "the smell from the coffee" emphasises physical emanation (the smell coming out of the cup). However, "the smell of coffee" is the natural, expected expression in everyday English, making "from" the less appropriate choice here.',
+    explanationJa: '「the smell of」は特性的な香りを表す標準的な決まった表現です。「from」も誤りではなく、「the smell from the coffee」はコーヒーから漂う臭いを強調します。しかし日常英語では「the smell of coffee」が自然で期待される表現です。'
+  },
+];
+
+var errScore = 0, errAnswered = 0, errQueue = [];
+
+function loadErrors() {
+  errScore = 0; errAnswered = 0;
+  errQueue = shuffle(errorAll).slice(0, 7);
+  document.getElementById('err-score-f').textContent = 0;
+  document.getElementById('err-total-f').textContent = 0;
+  var list = document.getElementById('err-list');
+  list.innerHTML = '';
+  errQueue.forEach(function(q, i) {
+    var wrapper = document.createElement('div');
+    wrapper.style.marginBottom = '1rem';
+
+    var sent = document.createElement('div');
+    sent.className = 'error-sentence';
+    var html = '';
+    q.before.split(' ').forEach(function(w) {
+      html += '<span class="err-word" data-idx="' + i + '" onclick="pickErr(this,' + i + ',false)">' + esc(w) + '</span> ';
+    });
+    html += '<span class="err-word" id="errtgt-' + i + '" data-idx="' + i + '" onclick="pickErr(this,' + i + ',true)">' + esc(q.wrong) + '</span> ';
+    q.after.split(' ').forEach(function(w) {
+      html += '<span class="err-word" data-idx="' + i + '" onclick="pickErr(this,' + i + ',false)">' + esc(w) + '</span> ';
+    });
+    sent.innerHTML = html;
+
+    var jaHint = document.createElement('div');
+    jaHint.className = 'sentence-ja-hint';
+    jaHint.textContent = q.correctSentenceJa;
+
+    var rev = document.createElement('div');
+    rev.className = 'err-reveal';
+    rev.id = 'errrev-' + i;
+
+    wrapper.appendChild(sent);
+    wrapper.appendChild(jaHint);
+    wrapper.appendChild(rev);
+    list.appendChild(wrapper);
+  });
+}
+
+function pickErr(el, idx, isWrong) {
+  var q = errQueue[idx];
+  document.querySelectorAll('[data-idx="' + idx + '"]').forEach(function(w) { w.onclick = null; w.style.cursor = 'default'; });
+  errAnswered++;
+  var rev = document.getElementById('errrev-' + idx);
+  var tgt = document.getElementById('errtgt-' + idx);
+  var jaLine = '<div class="explain-ja">' + esc(q.explanationJa) + '</div>';
+  if (isWrong) {
+    el.classList.add('correct-pick');
+    errScore++;
+    rev.innerHTML = '✓ Correct! <strong>"' + esc(q.wrong) + '"</strong> → <strong>"' + esc(q.correct) + '"</strong>. ' + esc(q.explanation) + jaLine;
+    rev.className = 'err-reveal show-right';
+  } else {
+    el.classList.add('wrong-pick');
+    tgt.classList.add('reveal-target');
+    rev.innerHTML = '✗ The error was <strong>"' + esc(q.wrong) + '"</strong> → should be <strong>"' + esc(q.correct) + '"</strong>. ' + esc(q.explanation) + jaLine;
+    rev.className = 'err-reveal show-wrong';
+  }
+  document.getElementById('err-score-f').textContent = errScore;
+  document.getElementById('err-total-f').textContent = errAnswered;
+}
+
+// ─────────────────────────────── MATCH THE MEANING
+// Tests comprehension: student reads an English sentence and picks the
+// Japanese meaning that matches it most precisely, including subtle nuance.
+
+var mtmAll = [
+  {
+    sentence: 'She is from Hokkaido.',
+    explain: '"Is from" states permanent origin — where she was born or grew up. It is not about a recent trip.',
+    explainJa: '「is from」は出身地という変わらない事実を表します。最近の移動については述べていません。',
+    options: [
+      { ja: '彼女は北海道出身です。（アイデンティティ・変わらない事実）', correct: true },
+      { ja: '彼女は北海道から来ました。（昨日など、特定の過去の移動）', correct: false },
+      { ja: '彼女は北海道のことが好きです。', correct: false },
+    ]
+  },
+  {
+    sentence: 'She came from Hokkaido for the meeting.',
+    explain: '"Came from" = a completed past trip. She travelled here from Hokkaido for a specific event. This says nothing about where she is originally from.',
+    explainJa: '「came from」＝完了した過去の移動。会議のために北海道からここへ来ました。出身地については述べていません。',
+    options: [
+      { ja: '彼女は北海道出身です。', correct: false },
+      { ja: '彼女は会議のために北海道から来ました。（過去の移動）', correct: true },
+      { ja: '彼女は北海道に住んでいます。', correct: false },
+    ]
+  },
+  {
+    sentence: 'She comes from a family of doctors.',
+    explain: '"Comes from" here describes background and upbringing — her family context. It is not about physical movement.',
+    explainJa: '「comes from」はここで背景・育ちを描写しています。物理的な移動についてではありません。',
+    options: [
+      { ja: '彼女は医者の家族に囲まれています。（一般的な背景・出身）', correct: true },
+      { ja: '彼女は以前医者の家族のもとを訪れました。', correct: false },
+      { ja: '彼女は医者の家族に向かっています。', correct: false },
+    ]
+  },
+  {
+    sentence: 'The vase is made of glass.',
+    explain: '"Made of" = the material is visible and unchanged. The vase looks like glass because it is glass — no transformation occurred.',
+    explainJa: '「made of」＝素材がそのまま残っています。花瓶はガラスのように見えます。なぜならガラスだからです。変換は起きていません。',
+    options: [
+      { ja: '花瓶はガラスが原料に使われています。（複数の素材の一つ）', correct: false },
+      { ja: '花瓶は古いガラスびんから作られました。（変換された）', correct: false },
+      { ja: '花瓶はガラスでできています。（素材がそのまま）', correct: true },
+    ]
+  },
+  {
+    sentence: 'The sculpture was made out of broken instruments.',
+    explain: '"Made out of" often implies transformation, but not necessarily — the instruments may still be recognisable in the sculpture. Both "the material is unchanged" and "the material was transformed" are valid readings. What "out of" clearly conveys is the source material.',
+    explainJa: '「made out of」は変換を示すことが多いですが、必ずしもそうではありません。楽器が彫刻の中にそのまま見える場合もあります。「素材がそのまま」「変換された」どちらの解釈も成り立ちます。「out of」が明確に伝えるのは素材の出所です。',
+    options: [
+      { ja: '彫刻は壊れた楽器でできています。（素材がそのまま）', correct: true },
+      { ja: '彫刻は壊れた楽器から作られました。（変換・新しい形に）', correct: true },
+      { ja: '彫刻は楽器のそばに置かれています。', correct: false },
+    ]
+  },
+  {
+    sentence: 'He volunteered out of a sense of responsibility.',
+    explain: '"Out of" expresses the emotional motivation behind a decision. "Out of responsibility" is a fixed phrase — the feeling drove the action.',
+    explainJa: '「out of」は決断の背景にある感情的な動機を表します。「out of responsibility」は決まった表現で、その感情が行動を促しました。',
+    options: [
+      { ja: '彼は責任感から自発的に参加しました。（動機）', correct: true },
+      { ja: '彼は責任ある立場から離れました。', correct: false },
+      { ja: '彼は責任者に頼まれてボランティアをしました。', correct: false },
+    ]
+  },
+  {
+    sentence: 'I heard about the opening from my manager.',
+    explain: '"From" = the direct source. The manager personally told you — there was no intermediary.',
+    explainJa: '「from」＝直接の出所。マネージャーが個人的に教えてくれました。仲介者はいませんでした。',
+    options: [
+      { ja: '私はマネージャーを通じて（間接的に）その求人を聞きました。', correct: false },
+      { ja: '私はマネージャーから（直接）その求人について聞きました。', correct: true },
+      { ja: '私はマネージャーのために求人情報を集めました。', correct: false },
+    ]
+  },
+  {
+    sentence: 'I heard about the opening through my manager.',
+    explain: '"Through my manager" most naturally implies an indirect channel — the manager passed the information along. However, it can also describe a direct conversation if the manager was the conduit. Both the "direct" and "indirect" Japanese readings are defensible here.',
+    explainJa: '「through my manager」は最も自然には間接的な経路を示します（マネージャーが情報を伝えた）。しかし、マネージャーが直接の接点だった場合にも使えます。「直接」「間接」どちらの日本語訳も成り立ちます。',
+    options: [
+      { ja: '私はマネージャーから（直接）その求人について聞きました。', correct: true },
+      { ja: '私はマネージャーを経由して（間接的に）その求人を知りました。', correct: true },
+      { ja: '私はマネージャーを説得して求人情報を得ました。', correct: false },
+    ]
+  },
+  {
+    sentence: 'This symphony is by Beethoven.',
+    explain: '"By" identifies the creator. It tells you who composed or made something — not where it came from or how you got it.',
+    explainJa: '「by」は制作者を特定します。誰が作曲・作成したかを伝えます。どこから来たか、どのように入手したかではありません。',
+    options: [
+      { ja: 'この交響曲はベートーヴェンから贈られました。', correct: false },
+      { ja: 'この交響曲はベートーヴェンを通じて広まりました。', correct: false },
+      { ja: 'この交響曲はベートーヴェンによって作曲されました。', correct: true },
+    ]
+  },
+  {
+    sentence: 'She got the concert tickets from Beethoven\'s estate.',
+    explain: '"From" shows the source from which she received something. The estate is where the tickets came from — this is about acquisition, not authorship.',
+    explainJa: '「from」は受け取った出所を示します。財団がチケットの入手元です。作者についてではなく、入手に関することです。',
+    options: [
+      { ja: 'コンサートチケットはベートーヴェンの遺産財団から入手しました。', correct: true },
+      { ja: 'コンサートチケットはベートーヴェンが作りました。', correct: false },
+      { ja: 'コンサートチケットはベートーヴェンの経路で手に入れました。', correct: false },
+    ]
+  },
+  {
+    sentence: 'The bread is made with sourdough starter.',
+    explain: '"Made with" lists an ingredient used in making something. The sourdough starter is one component — the bread is not made purely of starter.',
+    explainJa: '「made with」は作るために使われた材料を列挙します。サワードウスターターは材料の一つです。パンがスターターだけでできているわけではありません。',
+    options: [
+      { ja: 'パンはサワードウスターターだけでできています。', correct: false },
+      { ja: 'パンはサワードウスターターを材料の一つとして使って作られています。', correct: true },
+      { ja: 'パンはサワードウスターターに変換されました。', correct: false },
+    ]
+  },
+  {
+    sentence: 'After losing his job, he lived off his savings for a year.',
+    explain: '"Live off" = to use something as your financial resource. His savings were what sustained him — he drew money from them to survive.',
+    explainJa: '「live off」＝何かを生活の資金源として使う。貯金が彼を支えていました。生活するためにそこからお金を引き出していました。',
+    options: [
+      { ja: '仕事を失った後、貯金を1年間全額貯めました。', correct: false },
+      { ja: '仕事を失った後、1年間貯金を生活費として使いました。', correct: true },
+      { ja: '仕事を失った後、貯金なしで1年間生活しました。', correct: false },
+    ]
+  },
+];
+
+var mtmScore = 0, mtmAnswered = 0, mtmQueue = [];
+
+function loadMtm() {
+  mtmScore = 0; mtmAnswered = 0;
+  mtmQueue = shuffle(mtmAll).slice(0, 8);
+  document.getElementById('mtm-score-f').textContent = 0;
+  document.getElementById('mtm-total-f').textContent = 0;
+  var list = document.getElementById('mtm-list');
+  list.innerHTML = '';
+  mtmQueue.forEach(function(q, i) {
+    var block = document.createElement('div');
+    block.className = 'mtm-question';
+
+    var sent = document.createElement('div');
+    sent.className = 'mtm-sentence';
+    sent.textContent = q.sentence;
+
+    var opts = document.createElement('div');
+    opts.className = 'mtm-options';
+    var shuffled = shuffle(q.options.map(function(o,j){ return {ja:o.ja, correct:o.correct, origIdx:j}; }));
+    shuffled.forEach(function(opt, j) {
+      var div = document.createElement('div');
+      div.className = 'mtm-option';
+      div.dataset.correct = opt.correct ? '1' : '0';
+      var letter = document.createElement('span');
+      letter.className = 'opt-letter';
+      letter.textContent = String.fromCharCode(65 + j) + '.';
+      var text = document.createElement('span');
+      text.textContent = opt.ja;
+      div.appendChild(letter);
+      div.appendChild(text);
+      div.onclick = function() { answerMtm(i, opt.correct, div, opts, q); };
+      opts.appendChild(div);
+    });
+
+    // Explanation panel — hidden until answered
+    var expl = document.createElement('div');
+    expl.className = 'mtm-explain';
+    expl.id = 'mtm-expl-' + i;
+
+    block.appendChild(sent);
+    block.appendChild(opts);
+    block.appendChild(expl);
+    list.appendChild(block);
+  });
+}
+
+function answerMtm(idx, isCorrect, clickedDiv, opts, q) {
+  opts.querySelectorAll('.mtm-option').forEach(function(d) {
+    d.onclick = null;
+    d.classList.add('opt-disabled');
+  });
+  mtmAnswered++;
+  var expl = document.getElementById('mtm-expl-' + idx);
+
+  if (isCorrect) {
+    clickedDiv.classList.remove('opt-disabled');
+    clickedDiv.classList.add('opt-correct');
+    // prepend ✓ icon to the option
+    clickedDiv.querySelector('.opt-letter').textContent = '✓';
+    mtmScore++;
+    if (expl) {
+      expl.innerHTML = '<span class="mtm-expl-icon mtm-correct-icon">✓</span>' + esc(q.explain) + '<div class="explain-ja">' + esc(q.explainJa) + '</div>';
+      expl.className = 'mtm-explain mtm-explain-correct';
+    }
+  } else {
+    clickedDiv.classList.remove('opt-disabled');
+    clickedDiv.classList.add('opt-wrong');
+    clickedDiv.querySelector('.opt-letter').textContent = '✗';
+    // reveal and mark correct option
+    opts.querySelectorAll('.mtm-option').forEach(function(d) {
+      if (d.dataset.correct === '1') {
+        d.classList.remove('opt-disabled');
+        d.classList.add('opt-reveal');
+        d.querySelector('.opt-letter').textContent = '✓';
+      }
+    });
+    if (expl) {
+      expl.innerHTML = '<span class="mtm-expl-icon mtm-wrong-icon">✗</span>' + esc(q.explain) + '<div class="explain-ja">' + esc(q.explainJa) + '</div>';
+      expl.className = 'mtm-explain mtm-explain-wrong';
+    }
+  }
+  document.getElementById('mtm-score-f').textContent = mtmScore;
+  document.getElementById('mtm-total-f').textContent = mtmAnswered;
+}
+
+// ─────────────────────────────── INIT
+buildFillin();
+loadCtf();
+loadErrors();
+loadMtm();
+show('reference'); // sets correct initial tab + hides floating bar
+</script>
+</body>
+</html>
